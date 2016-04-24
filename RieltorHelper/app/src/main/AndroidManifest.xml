@@ -23,6 +23,14 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
+        <activity
+            android:name=".AddInfoActivity"
+            android:label="@string/title_activity_add_info" >
+        </activity>
+        <activity
+            android:name=".ViewInfoActivity"
+            android:label="@string/title_activity_view_info" >
+        </activity>
     </application>
 
 </manifest>

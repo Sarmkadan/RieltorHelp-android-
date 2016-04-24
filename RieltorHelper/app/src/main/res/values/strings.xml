@@ -10,4 +10,6 @@
     <string name="text_btn_add_data">Добавить данные</string>
     <string name="text_btn_view_data">Просмотреть данные</string>
     <string name="txt_btn_settings">Настройки</string>
+    <string name="title_activity_add_info">AddInfoActivity</string>
+    <string name="title_activity_view_info">ViewInfoActivity</string>
 </resources>
