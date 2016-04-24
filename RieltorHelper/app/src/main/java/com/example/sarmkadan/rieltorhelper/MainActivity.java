@@ -7,8 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btnAddData;
+    private Button btnViewData;
+    private Button btnSettings;
+
     private SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +22,43 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //получаем доступ к кнопкам
+        btnAddData = (Button) findViewById(R.id.btnAddData);
+        btnViewData = (Button) findViewById(R.id.btnViewData);
+        btnSettings = (Button) findViewById(R.id.btnSettings);
+
+
+        //обработчики
+
+        //обработка нажатия на кнопку btnAddData
+        btnAddData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //обработка нажатия на кнопку btnViewData
+        btnViewData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //обработка нажатия на кнопку btnSettings
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PrefActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
