@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.Infrastructure", "RieltorHelper.Infrastructure\RieltorHelper.Infrastructure.csproj", "{723600BA-23AE-443E-B02B-24945DDA2EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.DomainModel", "RieltorHelper.DomainModel\RieltorHelper.DomainModel.csproj", "{84D0BB91-9859-48C5-8573-28A7A2751F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.DomainModel.Test", "RieltorHelper.DomainModel.Test\RieltorHelper.DomainModel.Test.csproj", "{81108357-E518-44CF-B2CB-8CD5C964AFCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{723600BA-23AE-443E-B02B-24945DDA2EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723600BA-23AE-443E-B02B-24945DDA2EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723600BA-23AE-443E-B02B-24945DDA2EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723600BA-23AE-443E-B02B-24945DDA2EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
