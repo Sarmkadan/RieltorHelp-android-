@@ -10,6 +10,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.sarmkadan.rieltorhelper.databases.DbHelper;
+import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
+import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+
+import java.util.ArrayList;
+
 public class ViewInfoActivity extends AppCompatActivity {
 
     private Spinner spinner;
@@ -40,6 +46,20 @@ public class ViewInfoActivity extends AppCompatActivity {
                 tableSelected = tablesFromDb[position];
 
                 //вытаскиваем из БД данные из выбранной таблицы
+
+                //тестовое вытаскивание данных из таблины ArendRoom
+                DbHelper dbHelper = new DbHelper(getApplicationContext());
+                ArrayList<ArendRoom> arendRooms;
+
+                try {
+                    arendRooms = dbHelper.getArendRoom(dbHelper.getReadableDatabase());
+                } catch (NoSuchTableInDbException e) {
+                    e.printStackTrace();
+                }
+                //вывод на экран
+
+
+                //конец тестовой шляпы
 
             }
 

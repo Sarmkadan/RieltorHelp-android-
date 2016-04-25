@@ -55,7 +55,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     //метод возращает список объектов класса ArendRoom
     public ArrayList<ArendRoom> getArendRoom(SQLiteDatabase db) throws NoSuchTableInDbException {
 
-        ArrayList<ArendRoom> result = null;
+        ArrayList<ArendRoom> result = new ArrayList<>();
 
         Cursor cursor = db.query("ArendRoom", null, null, null, null, null, null);
 
