@@ -8,7 +8,7 @@ import android.util.Log;
 /**
  * Created by Abilis on 25.04.2016.
  */
-public class DbHelper extends SQLiteOpenHelper implements DataStrore {
+public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
     private static final String DB_NAME = "RIELTOR";
     private static final int DB_VERSION = 3;

@@ -5,7 +5,7 @@ package com.example.sarmkadan.rieltorhelper.databases;
  */
 
 //эта штука будет определять методы, которые должны быть реализованы в классе DbHelper
-public interface DataStrore {
+public interface DataStore {
 
 
 }
