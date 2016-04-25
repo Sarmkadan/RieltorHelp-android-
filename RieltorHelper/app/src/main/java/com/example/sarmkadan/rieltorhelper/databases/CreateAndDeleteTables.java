@@ -2,11 +2,20 @@ package com.example.sarmkadan.rieltorhelper.databases;
 
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 /**
  * Created by Abilis on 25.04.2016.
  */
-public final class CreateDatabase {
+public final class CreateAndDeleteTables {
 
+    //Список содержит название всех таблиц в БД
+    private static final ArrayList<String> TABLES = new ArrayList<>();
+
+    //начальный префикс для удаления таблиц
+    private static final String DROP_TABLE_IF_IT_EXISTS = "DROP TABLE IF IT EXISTS ";
+
+    //запросы создания таблиц
     private static final String CREATE_AREND_IMAGE = "CREATE TABLE ArendImage (ID INTEGER PRIMARY" +
             " KEY AUTOINCREMENT NOT NULL, Картинка BLOB, Назва STRING, ArendID INTEGER REFERENCES" +
             " Arend (ID) ON DELETE CASCADE);";
@@ -76,11 +85,11 @@ public final class CreateDatabase {
             " REFERENCES HouseSell (ID) ON DELETE CASCADE);";
 
 
-    private CreateDatabase () {
+    private CreateAndDeleteTables() {
     }
 
     //метод создает все таблицы в БД
-    static void initDb(SQLiteDatabase db) {
+    static void createTables(SQLiteDatabase db) {
         db.execSQL(CREATE_AREND_IMAGE);
         db.execSQL(CREATE_AREND_ROOM);
         db.execSQL(CREATE_EARTH_SELL_IMAGE);
@@ -97,6 +106,34 @@ public final class CreateDatabase {
         db.execSQL(CREATE_PRIM_SELL);
         db.execSQL(CREATE_HOUSE_SELL);
         db.execSQL(CREATE_HOUSE_SELL_IMAGE);
+    }
+
+    //метод удаляет все таблицы в БД
+    static void dropTables(SQLiteDatabase db) {
+
+        //заполнение списка таблиц (названия таблиц в БД)
+        TABLES.add("ArendImage");
+        TABLES.add("ArendRoom");
+        TABLES.add("EarthSellImage");
+        TABLES.add("KVsell");
+        TABLES.add("ArendPrimImage");
+        TABLES.add("PrimSellImage");
+        TABLES.add("ArendRoomImage");
+        TABLES.add("Arend");
+        TABLES.add("HostelSell");
+        TABLES.add("KVsellImage");
+        TABLES.add("EarthSell");
+        TABLES.add("ArendPrim");
+        TABLES.add("HostelSellImage");
+        TABLES.add("PrimSell");
+        TABLES.add("HouseSell");
+        TABLES.add("HouseSellImage");
+
+        //выполнение запросов на удаление таблиц
+        for (String str : TABLES) {
+            db.execSQL(DROP_TABLE_IF_IT_EXISTS + str);
+        }
+
     }
 
 }
