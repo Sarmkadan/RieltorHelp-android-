@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by Abilis on 25.04.2016.
  */
@@ -43,4 +45,6 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
         //создаем таблицы заново
         onCreate(db);
     }
+
+
 }

@@ -39,8 +39,7 @@ public class ViewInfoActivity extends AppCompatActivity {
                 //выбранная позиция в спиннере равна той таблице, которая записана в полученном массиве
                 tableSelected = tablesFromDb[position];
 
-                //следующая строка нужна только для демонстрации работы
-                Toast.makeText(getApplicationContext(), tableSelected, Toast.LENGTH_SHORT).show();
+                //вытаскиваем из БД данные из выбранной таблицы
 
             }
 
