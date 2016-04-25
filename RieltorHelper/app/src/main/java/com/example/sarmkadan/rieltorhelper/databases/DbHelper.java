@@ -19,7 +19,7 @@ import java.util.Date;
 public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
     private static final String DB_NAME = "RIELTOR";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 1;
     private final String TAG = "Sqlite";
 
 

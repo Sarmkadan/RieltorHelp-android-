@@ -1,5 +1,6 @@
 package com.example.sarmkadan.rieltorhelper;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,19 +8,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.sarmkadan.rieltorhelper.databases.DbHelper;
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ViewInfoActivity extends AppCompatActivity {
 
     private Spinner spinner;
+    private GridView gridView;
     private String tableSelected;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +39,9 @@ public class ViewInfoActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item);
         //определяем разметку
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //примеряем адаптер к спиннеру
+        //применяем адаптер к спиннеру
         spinner.setAdapter(adapter);
+
 
         //обработчик
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -47,19 +54,6 @@ public class ViewInfoActivity extends AppCompatActivity {
 
                 //вытаскиваем из БД данные из выбранной таблицы
 
-                //тестовое вытаскивание данных из таблины ArendRoom
-                DbHelper dbHelper = new DbHelper(getApplicationContext());
-                ArrayList<ArendRoom> arendRooms;
-
-                try {
-                    arendRooms = dbHelper.getArendRoom(dbHelper.getReadableDatabase());
-                } catch (NoSuchTableInDbException e) {
-                    e.printStackTrace();
-                }
-                //вывод на экран
-
-
-                //конец тестовой шляпы
 
             }
 
@@ -92,4 +86,5 @@ public class ViewInfoActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

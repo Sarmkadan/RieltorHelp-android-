@@ -10,7 +10,7 @@ import java.util.Date;
 public class FormatingDate {
 
     //формат даты dd:MM:yyyy
-    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MM;yyyy");
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MM:yyyy");
 
     private FormatingDate() {
     }
