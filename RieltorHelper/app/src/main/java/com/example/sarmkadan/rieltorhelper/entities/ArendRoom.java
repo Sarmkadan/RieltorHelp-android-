@@ -23,13 +23,13 @@ public class ArendRoom extends Entity {
     protected String typeOfRoom;
     protected String forWhom;
 
-    public ArendRoom(int id, String phoneNumver, String fullName, Date date, int costUah, int costUsd, String common,
+    public ArendRoom(int id, String phoneNumber, String fullName, Date date, int costUah, int costUsd, String common,
                      String typeOfRent, String numOfRooms, String district, String addresses,
                      String floor, String square, String condition, String heating, String furniture,
                      String furnitureList, String householdAppliances, String householdAppliancesList,
                      String typeSettle, String typeOfRoom, String forWhom) {
 
-        super(id, phoneNumver, fullName, date, costUah, costUsd, common);
+        super(id, phoneNumber, fullName, date, costUah, costUsd, common);
 
         this.typeOfRent = typeOfRent;
         this.numOfRooms = numOfRooms;

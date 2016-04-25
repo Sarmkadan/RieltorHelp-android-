@@ -19,7 +19,7 @@ public class FormatingDate {
     public static String getDateAsStr(Date date) {
 
         String result = simpleDateFormat.format(date);
-        
+
         return result;
     }
 

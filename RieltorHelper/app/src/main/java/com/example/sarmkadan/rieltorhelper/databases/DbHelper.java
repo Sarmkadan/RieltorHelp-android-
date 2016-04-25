@@ -1,11 +1,17 @@
 package com.example.sarmkadan.rieltorhelper.databases;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
+import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Abilis on 25.04.2016.
@@ -46,5 +52,56 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
         onCreate(db);
     }
 
+    //метод возращает список объектов класса ArendRoom
+    public ArrayList<ArendRoom> getArendRoom(SQLiteDatabase db) throws NoSuchTableInDbException {
+
+        ArrayList<ArendRoom> result = null;
+
+        Cursor cursor = db.query("ArendRoom", null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("Телефон"));
+                String fullName = cursor.getString(cursor.getColumnIndex("ПІБ"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("Дата_появи"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("ЦінаГРН"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("ЦінаДол"));
+                String common = cursor.getString(cursor.getColumnIndex("Загальне"));
+                String typeOfRent = cursor.getString(cursor.getColumnIndex("Тип_Оренди"));
+                String numOfRooms = cursor.getString(cursor.getColumnIndex("Кількість_Кімнат"));
+                String district = cursor.getString(cursor.getColumnIndex("Район"));
+                String addresses = cursor.getString(cursor.getColumnIndex("Адреса"));
+                String floor = cursor.getString(cursor.getColumnIndex("Поверх"));
+                String square = cursor.getString(cursor.getColumnIndex("Площа"));
+                String condition = cursor.getString(cursor.getColumnIndex("Стан"));
+                String heating = cursor.getString(cursor.getColumnIndex("Опалення"));
+                String furniture = cursor.getString(cursor.getColumnIndex("Меблі"));
+                String furnitureList = cursor.getString(cursor.getColumnIndex("Меблі_список"));
+                String householdAppliances = cursor.getString(cursor.getColumnIndex("Побутова_техніка"));
+                String householdAppliancesList = cursor.getString(cursor.getColumnIndex("Список_техніки"));
+                String typeSettle = cursor.getString(cursor.getColumnIndex("Тип_Заселення"));
+                String typeOfRoom = cursor.getString(cursor.getColumnIndex("Тип_Кімнати"));
+                String forWhom = cursor.getString(cursor.getColumnIndex("Для_кого"));
+
+                //создаем объект класса ArendRoom и добавляем его в список
+                ArendRoom arendRoom = new ArendRoom(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, typeOfRent, numOfRooms, district, addresses, floor, square, condition,
+                        heating, furniture, furnitureList, householdAppliances, householdAppliancesList,
+                        typeSettle, typeOfRoom, forWhom);
+
+                result.add(arendRoom);
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
 
 }

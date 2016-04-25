@@ -8,7 +8,7 @@ import java.util.Date;
 public abstract class Entity {
 
     protected int id;
-    protected String phoneNumver;
+    protected String phoneNumber;
     protected String fullName;
     protected Date date;
     protected int costUah;
@@ -16,9 +16,9 @@ public abstract class Entity {
     protected String common;
 
 
-    public Entity(int id, String phoneNumver, String fullName, Date date, int costUah, int costUsd, String common) {
+    public Entity(int id, String phoneNumber, String fullName, Date date, int costUah, int costUsd, String common) {
         this.id = id;
-        this.phoneNumver = phoneNumver;
+        this.phoneNumber = phoneNumber;
         this.fullName = fullName;
         this.date = date;
         this.costUah = costUah;
@@ -30,8 +30,8 @@ public abstract class Entity {
         return id;
     }
 
-    public String getPhoneNumver() {
-        return phoneNumver;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public String getFullName() {
