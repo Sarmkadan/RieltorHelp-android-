@@ -4,13 +4,52 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ViewInfoActivity extends AppCompatActivity {
+
+    private Spinner spinner;
+    private String tableSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_info);
+
+        //находим спиннер
+        spinner = (Spinner) findViewById(R.id.spinner2);
+        //создаем из ресурсов адаптер
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tablesFromDb,
+                android.R.layout.simple_spinner_item);
+        //определяем разметку
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //примеряем адаптер к спиннеру
+        spinner.setAdapter(adapter);
+
+        //обработчик
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //получаем массив строк, где записаны элементы спиннера
+                String[] tablesFromDb = getResources().getStringArray(R.array.tablesFromDb);
+                //выбранная позиция в спиннере равна той таблице, которая записана в полученном массиве
+                tableSelected = tablesFromDb[position];
+
+                //следующая строка нужна только для демонстрации работы
+                Toast.makeText(getApplicationContext(), tableSelected, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     @Override

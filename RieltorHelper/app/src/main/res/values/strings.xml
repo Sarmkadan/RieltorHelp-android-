@@ -17,4 +17,15 @@
     <string name="title_activity_pref">PrefActivity</string>
 
     <string name="hello_world">Экран с настройками</string>
+
+    <string-array name="tablesFromDb">
+        <item>ArendRoom</item>
+        <item>Vsell</item>
+        <item>Arend</item>
+        <item>HostelSell</item>
+        <item>EarthSell</item>
+        <item>ArendPrim</item>
+        <item>PrimSell</item>
+        <item>HouseSell</item>
+    </string-array>
 </resources>
