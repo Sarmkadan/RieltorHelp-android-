@@ -13,7 +13,7 @@ public final class CreateAndDeleteTables {
     private static final ArrayList<String> TABLES = new ArrayList<>();
 
     //начальный префикс для удаления таблиц
-    private static final String DROP_TABLE_IF_IT_EXISTS = "DROP TABLE IF IT EXISTS ";
+    private static final String DROP_TABLE_IF_EXISTS = "DROP TABLE IF EXISTS";
 
     //запросы создания таблиц
     private static final String CREATE_AREND_IMAGE = "CREATE TABLE ArendImage (ID INTEGER PRIMARY" +
@@ -131,7 +131,7 @@ public final class CreateAndDeleteTables {
 
         //выполнение запросов на удаление таблиц
         for (String str : TABLES) {
-            db.execSQL(DROP_TABLE_IF_IT_EXISTS + str);
+            db.execSQL(DROP_TABLE_IF_EXISTS + " " + str);
         }
 
     }
