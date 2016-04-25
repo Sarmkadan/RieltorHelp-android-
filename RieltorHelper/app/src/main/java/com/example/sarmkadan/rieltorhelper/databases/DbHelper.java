@@ -12,7 +12,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStrore {
     private static final String DB_NAME = "RIELTOR";
     private static final int DB_VERSION = 1;
 
-    
+
 
 
 
@@ -22,10 +22,9 @@ public class DbHelper extends SQLiteOpenHelper implements DataStrore {
 
 
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        CreateDatabase.initDb(db);
     }
 
     @Override
