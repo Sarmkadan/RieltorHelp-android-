@@ -54,7 +54,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
     //метод возращает список объектов класса Entity
-    public ArrayList<Entity> getArendRoom(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException {
+    public ArrayList<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException {
 
         ArrayList<Entity> result = new ArrayList<>();
 

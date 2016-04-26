@@ -49,7 +49,7 @@ public class ViewInfoActivity extends AppCompatActivity {
         ArrayList<Entity> entities;
 
         try {
-            entities = dbHelper.getArendRoom(db, "ArendRoom");
+            entities = dbHelper.getEntitiesList(db, "ArendRoom");
         } catch (NoSuchTableInDbException e) {
             entities = new ArrayList<>(); //пустой список на случай исключения
         }

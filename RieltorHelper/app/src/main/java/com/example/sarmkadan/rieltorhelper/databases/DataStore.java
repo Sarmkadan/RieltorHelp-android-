@@ -16,6 +16,6 @@ import java.util.ArrayList;
 public interface DataStore {
 
     //метод возращает список объектов класса Entity
-    public ArrayList<Entity> getArendRoom(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
+    ArrayList<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
 
 }
