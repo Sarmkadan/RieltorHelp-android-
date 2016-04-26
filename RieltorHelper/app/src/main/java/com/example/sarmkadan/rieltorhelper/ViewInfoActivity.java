@@ -49,12 +49,12 @@ public class ViewInfoActivity extends AppCompatActivity {
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        ArrayList<ArendRoom> arendRooms = null;
+        ArrayList<ArendRoom> arendRooms;
 
         try {
             arendRooms = dbHelper.getArendRoom(db);
         } catch (NoSuchTableInDbException e) {
-            e.printStackTrace();
+            arendRooms = new ArrayList<>(); //пустой список на случай исключения
         }
 
 

@@ -26,6 +26,7 @@ public abstract class Entity {
         this.common = common;
     }
 
+
     public int getId() {
         return id;
     }
