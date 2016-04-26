@@ -28,4 +28,6 @@
         <item>PrimSell</item>
         <item>HouseSell</item>
     </string-array>
+    <string name="title_activity_sync">SyncActivity</string>
+    <string name="text_btn_sync">Синхронизация</string>
 </resources>
