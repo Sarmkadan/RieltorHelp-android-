@@ -44,6 +44,7 @@ public class ViewInfoActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
+
         //тестовое вытаскивание объектов ArendRoom из БД
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -60,18 +61,12 @@ public class ViewInfoActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ArendRoomAdapter(this, arendRooms));
 
-
-
-
-
-
-
         //конец тестового вытаскивания
 
 
 
 
-        //обработчик
+        //обработчик выбора спиннера
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
