@@ -22,13 +22,16 @@ public class SyncActivity extends AppCompatActivity {
 
         // наша  кнопка
         btnSync = (Button) findViewById(R.id.btnSync);
-
+        // текстовое поле
+        outView = (TextView) findViewById(R.id.synTextView);
+        outView.setText("Проверка работы кнопки");
 
         // обработчик
         btnSync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String s= HttpRequest.getRequest("http://mydefence.h1n.ru/script/?op=set&userid=2");
+                outView.setText(s);
 
             }
         });

@@ -1,5 +1,7 @@
 package com.example.sarmkadan.rieltorhelper.utils;
 
+import android.util.Log;
+
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
@@ -11,7 +13,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 /**
  * Created by cav on 26.04.16.
  */
+
 public class HttpRequest {
+    private final static String LOG_TAG="syncHTTPRequest";
 
     public static String getRequest(String urlRequest){
         try{
@@ -22,6 +26,7 @@ public class HttpRequest {
             doc.getDocumentElement().normalize();
 
         }catch (Exception e){
+            Log.d(LOG_TAG,e.getMessage());
             return "Error: "+e.getLocalizedMessage();
 
         }
