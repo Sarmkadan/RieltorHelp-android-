@@ -20,7 +20,7 @@
 
     <string-array name="tablesFromDb">
         <item>ArendRoom</item>
-        <item>Vsell</item>
+        <item>KVsell</item>
         <item>Arend</item>
         <item>HostelSell</item>
         <item>EarthSell</item>

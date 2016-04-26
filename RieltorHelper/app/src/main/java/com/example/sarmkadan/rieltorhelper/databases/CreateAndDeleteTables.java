@@ -65,7 +65,7 @@ public final class CreateAndDeleteTables {
     private static final String CREATE_AREND_PRIM = "CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
             " district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING," +
-            " typeOfObject STRING, location STRING, numOfRooms STRING, square STRING," +
+            " typeOfObject STRING, location STRING, numOfFloors STRING, square STRING," +
             " numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER," +
             " costUsd INTEGER, common STRING);";
     private static final String CREATE_HOSTEL_SELL_IMAGE = "CREATE TABLE HostelSellImage" +
@@ -74,7 +74,7 @@ public final class CreateAndDeleteTables {
     private static final String CREATE_PRIM_SELL = "CREATE TABLE PrimSell (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
             " district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING," +
-            " typeOfObject STRING, location STRING, numOfRooms STRING, square STRING," +
+            " typeOfObject STRING, location STRING, numOfFloors STRING, square STRING," +
             " numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER," +
             " costUsd INTEGER, common STRING);";
     private static final String CREATE_HOUSE_SELL = "CREATE TABLE HouseSell (ID INTEGER PRIMARY KEY" +
