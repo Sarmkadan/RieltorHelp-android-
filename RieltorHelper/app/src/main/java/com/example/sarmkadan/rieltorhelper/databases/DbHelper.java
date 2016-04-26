@@ -97,7 +97,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 break;
         }
 
-
+        cursor.close();
 
         return result;
     }
