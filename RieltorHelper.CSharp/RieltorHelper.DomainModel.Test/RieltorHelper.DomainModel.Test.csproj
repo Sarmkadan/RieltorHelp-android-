@@ -53,6 +53,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RieltorHelper.DomainModel\RieltorHelper.DomainModel.csproj">
+      <Project>{84d0bb91-9859-48c5-8573-28a7a2751f56}</Project>
+      <Name>RieltorHelper.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RieltorHelper.Infrastructure\RieltorHelper.Infrastructure.csproj">
+      <Project>{723600ba-23ae-443e-b02b-24945dda2ea1}</Project>
+      <Name>RieltorHelper.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
