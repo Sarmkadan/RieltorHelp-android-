@@ -1,6 +1,7 @@
 package com.example.sarmkadan.rieltorhelper;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,7 +25,7 @@ public class ViewInfoActivity extends AppCompatActivity {
     private Spinner spinner;
     private GridView gridView;
     private String tableSelected;
-
+    private List<Entity> entities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,49 +42,8 @@ public class ViewInfoActivity extends AppCompatActivity {
         //применяем адаптер к спиннеру
         spinner.setAdapter(adapter);
 
-
-
-        //тестовое вытаскивание объектов-наследников Entity из БД
-        DbHelper dbHelper = new DbHelper(this);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        List<Entity> entities;
-
-        try {
-            entities = dbHelper.getEntitiesList(db, "ArendRoom");
-        } catch (NoSuchTableInDbException e) {
-            entities = new ArrayList<>(); //пустой список на случай исключения
-        }
-
-
-        gridView = (GridView) findViewById(R.id.gridView);
-        gridView.setAdapter(new EntityAdapter(this, entities));
-
-        //конец тестового вытаскивания
-
-
-
-
         //обработчик выбора спиннера
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //получаем массив строк, где записаны элементы спиннера
-                String[] tablesFromDb = getResources().getStringArray(R.array.tablesFromDb);
-                //выбранная позиция в спиннере равна той таблице, которая записана в полученном массиве
-                tableSelected = tablesFromDb[position];
-
-                //вытаскиваем из БД данные из выбранной таблицы
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
+        spinner.setOnItemSelectedListener(new SpinnerOnItemSelectedListener());
     }
 
     @Override
@@ -106,6 +66,43 @@ public class ViewInfoActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    class SpinnerOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            //получаем массив строк, где записаны элементы спиннера
+            String[] tablesFromDb = getResources().getStringArray(R.array.tablesFromDb);
+            //выбранная позиция в спиннере равна той таблице, которая записана в полученном массиве
+            tableSelected = tablesFromDb[position];
+
+            //вытаскиваем из БД данные из выбранной таблицы
+
+
+            //тестовое вытаскивание объектов-наследников Entity из БД
+            DbHelper dbHelper = new DbHelper(getApplicationContext());
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+
+            try {
+                entities = dbHelper.getEntitiesList(db, tableSelected);
+            } catch (NoSuchTableInDbException | SQLiteException e) {
+                entities = new ArrayList<>(); //пустой список на случай исключения
+            }
+
+
+            gridView = (GridView) findViewById(R.id.gridView);
+            gridView.setAdapter(new EntityAdapter(getApplicationContext(), entities));
+
+            //конец тестового вытаскивания
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
     }
 
 }
