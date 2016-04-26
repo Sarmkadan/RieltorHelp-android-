@@ -17,6 +17,7 @@ import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInD
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewInfoActivity extends AppCompatActivity {
 
@@ -46,7 +47,7 @@ public class ViewInfoActivity extends AppCompatActivity {
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        ArrayList<Entity> entities;
+        List<Entity> entities;
 
         try {
             entities = dbHelper.getEntitiesList(db, "ArendRoom");

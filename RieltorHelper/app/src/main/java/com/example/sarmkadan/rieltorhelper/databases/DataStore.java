@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Abilis on 25.04.2016.
@@ -16,6 +16,6 @@ import java.util.ArrayList;
 public interface DataStore {
 
     //метод возращает список объектов класса Entity
-    ArrayList<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
+    List<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
 
 }

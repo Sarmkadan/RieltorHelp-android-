@@ -13,6 +13,7 @@ import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Abilis on 25.04.2016.
@@ -54,9 +55,9 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
     //метод возращает список объектов класса Entity
-    public ArrayList<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException {
+    public List<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException {
 
-        ArrayList<Entity> result = new ArrayList<>();
+        List<Entity> result = new ArrayList<>();
 
         Cursor cursor = db.query(tableName, null, null, null, null, null, null);
 
