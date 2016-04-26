@@ -76,24 +76,31 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 break;
             case "Arend":
                 //получаем список всех объектов типа Arend
+                result = createArendList(cursor);
                 break;
             case "ArendPrim":
                 //получаем список всех объектов типа ArendPrim
+                result = createArendPrimList(cursor);
                 break;
             case "KVsell":
                 //получаем список всех объектов типа KVsell
+                result = createKVsellList(cursor);
                 break;
             case "HostelSell":
                 //получаем список всех объектов типа HostelSell
+                result = createHostelSellList(cursor);
                 break;
             case "EarthSell":
                 //получаем список всех объектов типа EarthSell
+                result = createEarthSellList(cursor);
                 break;
             case "PrimSell":
                 //получаем список всех объектов типа PrimSell
+                result = createPrimSellList(cursor);
                 break;
             case "HouseSell":
                 //получаем список всех объектов типа HouseSell
+                result = createHouseSellList(cursor);
                 break;
         }
 
@@ -152,5 +159,187 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
         return result;
     }
+
+    //метод возвращает список созданных объектов класса Arend на основе данных из БД
+    private List<Entity> createArendList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса Arend и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса ArendPrim на основе данных из БД
+    private List<Entity> createArendPrimList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса ArendPrim и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса ArendKVSell на основе данных из БД
+    private List<Entity> createKVsellList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса ArendKVSell и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса HostelSell на основе данных из БД
+    private List<Entity> createHostelSellList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса HostelSell и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса EarthSell на основе данных из БД
+    private List<Entity> createEarthSellList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса EarthSell и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса PrimSell на основе данных из БД
+    private List<Entity> createPrimSellList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса PrimSell и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса HouseSell на основе данных из БД
+    private List<Entity> createHouseSellList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                //определяем переменные
+
+
+                //создаем объект класса HouseSell и добавляем его в список
+
+
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            throw new NoSuchTableInDbException();
+        }
+
+        return result;
+    }
+
 
 }
