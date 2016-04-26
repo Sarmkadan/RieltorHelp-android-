@@ -110,6 +110,6 @@ public class ArendRoom extends Entity {
 
     @Override
     public String toString() {
-        return id + " " + getPhoneNumber() + " " + getAddresses();
+        return getId() + " " + getPhoneNumber() + " " + getAddresses();
     }
 }
