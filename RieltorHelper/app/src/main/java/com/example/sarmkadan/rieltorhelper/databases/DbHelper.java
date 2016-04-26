@@ -61,6 +61,47 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
         Cursor cursor = db.query(tableName, null, null, null, null, null, null);
 
+        //определяем, какого класса объект нужно создать. Он совпадает с названием таблицы в БД
+        switch (tableName) {
+
+            case "ArendRoom":
+                //получаем список всех объектов типа ArendRoom
+               result = createArendRoomList(cursor);
+                break;
+            case "Arend":
+                //получаем список всех объектов типа Arend
+                break;
+            case "ArendPrim":
+                //получаем список всех объектов типа ArendPrim
+                break;
+            case "KVsell":
+                //получаем список всех объектов типа KVsell
+                break;
+            case "HostelSell":
+                //получаем список всех объектов типа HostelSell
+                break;
+            case "EarthSell":
+                //получаем список всех объектов типа EarthSell
+                break;
+            case "PrimSell":
+                //получаем список всех объектов типа PrimSell
+                break;
+            case "HouseSell":
+                //получаем список всех объектов типа HouseSell
+                break;
+        }
+
+
+
+        return result;
+    }
+
+
+    //метод возвращает список созданных объектов класса ArendRoom на основе данных из БД
+    private List<Entity> createArendRoomList(Cursor cursor) throws NoSuchTableInDbException {
+
+        List<Entity> result = new ArrayList<>();
+
         if (cursor.moveToFirst()) {
 
             do {

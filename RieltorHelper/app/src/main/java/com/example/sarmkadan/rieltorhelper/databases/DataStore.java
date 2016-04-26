@@ -15,7 +15,7 @@ import java.util.List;
 //эта штука будет определять методы, которые должны быть реализованы в классе DbHelper
 public interface DataStore {
 
-    //метод возращает список объектов класса Entity
+    //метод возращает список объектов класса Entity (его наследников)
     List<Entity> getEntitiesList(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
 
 }
