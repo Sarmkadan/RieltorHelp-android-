@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.entities.Entity;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
@@ -52,12 +53,12 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
         onCreate(db);
     }
 
-    //метод возращает список объектов класса ArendRoom
-    public ArrayList<ArendRoom> getArendRoom(SQLiteDatabase db) throws NoSuchTableInDbException {
+    //метод возращает список объектов класса Entity
+    public ArrayList<Entity> getArendRoom(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException {
 
-        ArrayList<ArendRoom> result = new ArrayList<>();
+        ArrayList<Entity> result = new ArrayList<>();
 
-        Cursor cursor = db.query("ArendRoom", null, null, null, null, null, null);
+        Cursor cursor = db.query(tableName, null, null, null, null, null, null);
 
         if (cursor.moveToFirst()) {
 

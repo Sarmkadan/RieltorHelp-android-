@@ -4,7 +4,7 @@ package com.example.sarmkadan.rieltorhelper.databases;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
-import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.entities.Entity;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 //эта штука будет определять методы, которые должны быть реализованы в классе DbHelper
 public interface DataStore {
 
-    //метод возращает список объектов класса ArendRoom
-    public ArrayList<ArendRoom> getArendRoom(SQLiteDatabase db) throws NoSuchTableInDbException;
+    //метод возращает список объектов класса Entity
+    public ArrayList<Entity> getArendRoom(SQLiteDatabase db, String tableName) throws NoSuchTableInDbException;
 
 }

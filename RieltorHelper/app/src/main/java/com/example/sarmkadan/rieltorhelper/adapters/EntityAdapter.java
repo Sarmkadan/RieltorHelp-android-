@@ -6,31 +6,31 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 
-import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.entities.Entity;
 
 import java.util.List;
 
 /**
  * Created by Abilis on 26.04.2016.
  */
-public class ArendRoomAdapter extends BaseAdapter {
+public class EntityAdapter extends BaseAdapter {
 
     private Context context;
-    private List<ArendRoom> arendRooms;
+    private List<Entity> entities;
 
-    public ArendRoomAdapter(Context context, List<ArendRoom> arendRooms) {
+    public EntityAdapter(Context context, List<Entity> entities) {
         this.context = context;
-        this.arendRooms = arendRooms;
+        this.entities = entities;
     }
 
     @Override
     public int getCount() {
-        return arendRooms.size();
+        return entities.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arendRooms.get(position);
+        return entities.get(position);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class ArendRoomAdapter extends BaseAdapter {
         Button button;
         if (convertView == null) {
             button = new Button(context);
-            button.setText(arendRooms.get(position).toString());
+            button.setText(entities.get(position).toString());
         }
         else {
             button = (Button) convertView;

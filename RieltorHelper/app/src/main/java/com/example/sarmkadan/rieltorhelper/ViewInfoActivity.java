@@ -10,16 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.example.sarmkadan.rieltorhelper.adapters.ArendRoomAdapter;
+import com.example.sarmkadan.rieltorhelper.adapters.EntityAdapter;
 import com.example.sarmkadan.rieltorhelper.databases.DbHelper;
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
-import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
-import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
+import com.example.sarmkadan.rieltorhelper.entities.Entity;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ViewInfoActivity extends AppCompatActivity {
 
@@ -45,21 +42,21 @@ public class ViewInfoActivity extends AppCompatActivity {
 
 
 
-        //тестовое вытаскивание объектов ArendRoom из БД
+        //тестовое вытаскивание объектов-наследников Entity из БД
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        ArrayList<ArendRoom> arendRooms;
+        ArrayList<Entity> entities;
 
         try {
-            arendRooms = dbHelper.getArendRoom(db);
+            entities = dbHelper.getArendRoom(db, "ArendRoom");
         } catch (NoSuchTableInDbException e) {
-            arendRooms = new ArrayList<>(); //пустой список на случай исключения
+            entities = new ArrayList<>(); //пустой список на случай исключения
         }
 
 
         gridView = (GridView) findViewById(R.id.gridView);
-        gridView.setAdapter(new ArendRoomAdapter(this, arendRooms));
+        gridView.setAdapter(new EntityAdapter(this, entities));
 
         //конец тестового вытаскивания
 
