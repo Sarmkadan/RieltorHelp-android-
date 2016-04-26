@@ -79,11 +79,9 @@ public class ViewInfoActivity extends AppCompatActivity {
 
             //вытаскиваем из БД данные из выбранной таблицы
 
-
-            //тестовое вытаскивание объектов-наследников Entity из БД
+            //получаем коннект к БД
             DbHelper dbHelper = new DbHelper(getApplicationContext());
             SQLiteDatabase db = dbHelper.getReadableDatabase();
-
 
             try {
                 entities = dbHelper.getEntitiesList(db, tableSelected);
@@ -91,11 +89,9 @@ public class ViewInfoActivity extends AppCompatActivity {
                 entities = new ArrayList<>(); //пустой список на случай исключения
             }
 
-
+            //строим список из вытащенных сущностей
             gridView = (GridView) findViewById(R.id.gridView);
             gridView.setAdapter(new EntityAdapter(getApplicationContext(), entities));
-
-            //конец тестового вытаскивания
 
         }
 

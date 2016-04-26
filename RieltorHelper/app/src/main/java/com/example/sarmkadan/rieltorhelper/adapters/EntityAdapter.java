@@ -1,6 +1,7 @@
 package com.example.sarmkadan.rieltorhelper.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -41,7 +42,7 @@ public class EntityAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Button button;
+        final Button button;
         if (convertView == null) {
             button = new Button(context);
             button.setText(entities.get(position).toString());
@@ -50,6 +51,18 @@ public class EntityAdapter extends BaseAdapter {
             button = (Button) convertView;
         }
         button.setId(position);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                /*Здесь будет обработка нажатия на кнопку, за которой скрывается отдельная строка,
+                вытащенная из БД. Видимо, нужно будет создать отдельную активити, где вывести
+                все данные из строки
+                Строчка ниже для демонстрации работы обработчика*/
+                Log.w("ButtonClick", button.getText().toString());
+            }
+        });
 
         return button;
     }
