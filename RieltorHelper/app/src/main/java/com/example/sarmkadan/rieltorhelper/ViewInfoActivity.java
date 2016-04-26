@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.sarmkadan.rieltorhelper.adapters.ArendRoomAdapter;
 import com.example.sarmkadan.rieltorhelper.databases.DbHelper;
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
@@ -41,6 +42,33 @@ public class ViewInfoActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //применяем адаптер к спиннеру
         spinner.setAdapter(adapter);
+
+
+        //тестовое вытаскивание объектов ArendRoom из БД
+        DbHelper dbHelper = new DbHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        ArrayList<ArendRoom> arendRooms = null;
+
+        try {
+            arendRooms = dbHelper.getArendRoom(db);
+        } catch (NoSuchTableInDbException e) {
+            e.printStackTrace();
+        }
+
+
+        gridView = (GridView) findViewById(R.id.gridView);
+        gridView.setAdapter(new ArendRoomAdapter(this, arendRooms));
+
+
+
+
+
+
+
+        //конец тестового вытаскивания
+
+
 
 
         //обработчик

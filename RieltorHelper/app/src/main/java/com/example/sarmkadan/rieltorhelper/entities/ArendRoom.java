@@ -107,4 +107,9 @@ public class ArendRoom extends Entity {
     public String getForWhom() {
         return forWhom;
     }
+
+    @Override
+    public String toString() {
+        return id + " " + phoneNumber + " " + addresses;
+    }
 }
