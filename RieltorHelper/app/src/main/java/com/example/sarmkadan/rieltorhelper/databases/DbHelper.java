@@ -23,12 +23,18 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     private static final String DB_NAME = "RIELTOR";
     private static final int DB_VERSION = 3;
     private final String TAG = "Sqlite";
+    private static DbHelper dbHelper = null;
 
 
-
-
-    public DbHelper(Context context) {
+    private DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    public static DbHelper getDbHelpere(Context context) {
+        if (dbHelper == null) {
+            dbHelper = new DbHelper(context);
+        }
+        return dbHelper;
     }
 
 

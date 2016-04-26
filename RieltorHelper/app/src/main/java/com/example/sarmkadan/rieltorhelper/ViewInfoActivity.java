@@ -80,7 +80,7 @@ public class ViewInfoActivity extends AppCompatActivity {
             //вытаскиваем из БД данные из выбранной таблицы
 
             //получаем коннект к БД
-            DbHelper dbHelper = new DbHelper(getApplicationContext());
+            DbHelper dbHelper = DbHelper.getDbHelpere(getApplicationContext());
             SQLiteDatabase db = dbHelper.getReadableDatabase();
 
             try {
