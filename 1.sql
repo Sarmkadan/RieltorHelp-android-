@@ -37,7 +37,7 @@ CREATE TABLE HostelSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, p
 CREATE TABLE KVsellImage (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, photo BLOB, title STRING, KVsellID INTEGER REFERENCES KVsell (ID) ON DELETE CASCADE);
 
 -- Таблица: EarthSell
-CREATE TABLE EarthSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, cytyDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING, communicationsList STRING, docs STRING, docList STRING, outbuildings STRING, buildingsList STRING, typeOfArea STRING, costUah INTEGER, costUsd INTEGER, common STRING);
+CREATE TABLE EarthSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, cityDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING, communicationsList STRING, docs STRING, docsList STRING, outbuildings STRING, buildingsList STRING, typeOfArea STRING, costUah INTEGER, costUsd INTEGER, common STRING);
 
 -- Таблица: ArendPrim
 CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING, typeOfObject STRING, location STRING, numOfFloors STRING, square STRING, numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER, costUsd INTEGER, common STRING);
@@ -46,10 +46,10 @@ CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, ph
 CREATE TABLE HostelSellImage (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, photo BLOB, title STRING, HostelSellID INTEGER REFERENCES HostelSell (ID) ON DELETE CASCADE);
 
 -- Таблица: PrimSell
-CREATE TABLE PrimSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING, typeOfObject STRING, location STRING, numOfRooms STRING, square STRING, numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER, costUsd INTEGER, common STRING);
+CREATE TABLE PrimSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING, typeOfObject STRING, location STRING, numOfFloors STRING, square STRING, numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER, costUsd INTEGER, common STRING);
 
 -- Таблица: HouseSell
-CREATE TABLE HouseSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, cytyDistrict STRING, fullAddress STRING, distanceToCity INTEGER, landSquare STRING, houseSquare STRING, typeOfHouse STRING, buildingsList STRING, communications STRING, communicationsList STRING, docs STRING, docList STRING, costUah INTEGER, costUsd INTEGER, common STRING);
+CREATE TABLE HouseSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, cityDistrict STRING, fullAddress STRING, distanceToCity INTEGER, landSquare STRING, houseSquare STRING, typeOfHouse STRING, buildingsList STRING, communications STRING, communicationsList STRING, docs STRING, docsList STRING, costUah INTEGER, costUsd INTEGER, common STRING);
 
 -- Таблица: HouseSellImage
 CREATE TABLE HouseSellImage (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, photo BLOB, title STRING, houseSellID INTEGER REFERENCES HouseSell (ID) ON DELETE CASCADE);

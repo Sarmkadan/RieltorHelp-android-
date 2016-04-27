@@ -59,8 +59,8 @@ public final class CreateAndDeleteTables {
             " KVsell (ID) ON DELETE CASCADE);";
     private static final String CREATE_EARTH_SELL = "CREATE TABLE EarthSell (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
-            " cytyDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING," +
-            " communicationsList STRING, docs STRING, docList STRING, outbuildings STRING," +
+            " cityDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING," +
+            " communicationsList STRING, docs STRING, docsList STRING, outbuildings STRING," +
             " buildingsList STRING, typeOfArea STRING, costUah INTEGER, costUsd INTEGER, common STRING);";
     private static final String CREATE_AREND_PRIM = "CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
@@ -79,9 +79,9 @@ public final class CreateAndDeleteTables {
             " costUsd INTEGER, common STRING);";
     private static final String CREATE_HOUSE_SELL = "CREATE TABLE HouseSell (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
-            " cytyDistrict STRING, fullAddress STRING, distanceToCity INTEGER, landSquare STRING," +
+            " cityDistrict STRING, fullAddress STRING, distanceToCity INTEGER, landSquare STRING," +
             " houseSquare STRING, typeOfHouse STRING, buildingsList STRING, communications STRING," +
-            " communicationsList STRING, docs STRING, docList STRING, costUah INTEGER," +
+            " communicationsList STRING, docs STRING, docsList STRING, costUah INTEGER," +
             " costUsd INTEGER, common STRING);";
     private static final String CREATE_HOUSE_SELL_IMAGE = "CREATE TABLE HouseSellImage" +
             " (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, photo BLOB, title STRING," +
