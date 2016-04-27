@@ -59,8 +59,8 @@ public final class CreateAndDeleteTables {
             " KVsell (ID) ON DELETE CASCADE);";
     private static final String CREATE_EARTH_SELL = "CREATE TABLE EarthSell (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +
-            " cytyDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING," +
-            " communicationsList STRING, docs STRING, docList STRING, outbuildings STRING," +
+            " cityDistrict STRING, addresses STRING, distanceToCity INTEGER, fullSquare STRING," +
+            " communicationsList STRING, docs STRING, docsList STRING, outbuildings STRING," +
             " buildingsList STRING, typeOfArea STRING, costUah INTEGER, costUsd INTEGER, common STRING);";
     private static final String CREATE_AREND_PRIM = "CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY" +
             " AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING," +

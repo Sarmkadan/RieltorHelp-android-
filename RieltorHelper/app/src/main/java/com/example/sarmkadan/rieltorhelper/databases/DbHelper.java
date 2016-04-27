@@ -24,7 +24,7 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
     private static final String DB_NAME = "RIELTOR";
-    private static final int DB_VERSION = 6;
+    private static final int DB_VERSION = 7;
     private final String TAG = "Sqlite";
     private static DbHelper dbHelper = null;
 
