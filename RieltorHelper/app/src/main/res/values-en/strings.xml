@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">RieltorHelper</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="pref_lang_title">Язык</string>
+    <string name="pref_export_title">Экспорт</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="text_btn_add_data">Добавить данные</string>
+    <string name="text_btn_view_data">Просмотреть данные</string>
+    <string name="txt_btn_settings">Настройки</string>
+    <string name="title_activity_add_info">AddInfoActivity</string>
+    <string name="title_activity_view_info">ViewInfoActivity</string>
+    <string name="title_activity_pref">PrefActivity</string>
+
+    <string name="hello_world">Экран с настройками</string>
+
+    <string-array name="tablesFromDb">
+        <item>ArendRoom</item>
+        <item>KVsell</item>
+        <item>Arend</item>
+        <item>HostelSell</item>
+        <item>EarthSell</item>
+        <item>ArendPrim</item>
+        <item>PrimSell</item>
+        <item>HouseSell</item>
+    </string-array>
+    <string name="title_activity_sync">SyncActivity</string>
+    <string name="text_btn_sync">Синхронизация</string>
+    <string name="txt_btnExport">Экспорт</string>
+    <string name="txt_btnClearCach">Очистить кэш</string>
+</resources>
