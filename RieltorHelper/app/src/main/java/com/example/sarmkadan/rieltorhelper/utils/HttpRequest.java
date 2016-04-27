@@ -17,10 +17,11 @@ public class HttpRequest {
     private final static String LOG_TAG="syncHTTPRequest";
 
     public static String getRequest(String urlRequest){
+        StringBuilder allpage = new StringBuilder();
         try{
             URLConnection conn = new URL(urlRequest).openConnection();
             InputStreamReader rd = new InputStreamReader(conn.getInputStream());
-            StringBuilder allpage = new StringBuilder();
+
             int n = 0;
             char[] buffer = new char[40000];
             while ((n=rd.read(buffer,0,buffer.length))!=-1){
@@ -33,6 +34,6 @@ public class HttpRequest {
 
         }
 
-        return null;
+        return allpage.toString();
     }
 }
