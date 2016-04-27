@@ -4,3 +4,5 @@
 Михаил Нуждин (mihailorsm), java
 Марков Андрей (DrMarkes), java
 Сулейманов Ринат (RinxSR), java
+Капров Андрей (koskapan), .NET
+Котов Александр (CavInc), java

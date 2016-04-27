@@ -8,6 +8,27 @@
 
     <TextView android:text="@string/hello_world"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btnExport"
+        android:id="@+id/btnExport"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="107dp"
+        android:layout_alignLeft="@+id/btnClearCach"
+        android:layout_alignStart="@+id/btnClearCach"
+        android:layout_alignRight="@+id/btnClearCach"
+        android:layout_alignEnd="@+id/btnClearCach" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btnClearCach"
+        android:id="@+id/btnClearCach"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -20,7 +20,7 @@
 
     <string-array name="tablesFromDb">
         <item>ArendRoom</item>
-        <item>Vsell</item>
+        <item>KVsell</item>
         <item>Arend</item>
         <item>HostelSell</item>
         <item>EarthSell</item>
@@ -30,4 +30,6 @@
     </string-array>
     <string name="title_activity_sync">SyncActivity</string>
     <string name="text_btn_sync">Синхронизация</string>
+    <string name="txt_btnExport">Экспорт</string>
+    <string name="txt_btnClearCach">Очистить кэш</string>
 </resources>
