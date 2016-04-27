@@ -7,7 +7,8 @@ namespace RieltorHelper.Infrastructure
 {
     public interface IRieltorRepository
     {
-        IEnumerable<IDataTable> GetTables();
+        int GetTablesCount();
+        IEnumerable<IDataTable> GetTables(int offset, int count);
         IDataTable GetTable(int id);
         void CreateTable(IDataTable table);
         void EditTable(int id, IDataTable table);

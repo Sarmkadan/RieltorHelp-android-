@@ -8,6 +8,11 @@ namespace RieltorHelper.DomainModel
 {
     public class SQLiteRieltorRepository : IRieltorRepository
     {
+        public int GetTablesCount()
+        {
+            throw new NotImplementedException();
+        }
+        
         public void CreateTable(IDataTable table)
         {
             throw new NotImplementedException();
@@ -28,7 +33,7 @@ namespace RieltorHelper.DomainModel
             throw new NotImplementedException();
         }
 
-        public IEnumerable<IDataTable> GetTables()
+        public IEnumerable<IDataTable> GetTables(int offset, int count)
         {
             throw new NotImplementedException();
         }
