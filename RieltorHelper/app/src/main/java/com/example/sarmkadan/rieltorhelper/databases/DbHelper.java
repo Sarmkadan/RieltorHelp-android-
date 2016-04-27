@@ -13,6 +13,7 @@ import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
 import com.example.sarmkadan.rieltorhelper.entities.EarthSell;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
+import com.example.sarmkadan.rieltorhelper.entities.HouseSell;
 import com.example.sarmkadan.rieltorhelper.entities.KVsell;
 import com.example.sarmkadan.rieltorhelper.entities.PrimSell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
@@ -27,7 +28,7 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
     private static final String DB_NAME = "RIELTOR";
-    private static final int DB_VERSION = 7;
+    private static final int DB_VERSION = 8;
     private final String TAG = "Sqlite";
     private static DbHelper dbHelper = null;
 
@@ -215,8 +216,8 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
 
-    //метод возвращает список созданных объектов класса primSell на основе данных из БД
-    private List<Entity> createArendPrimList(Cursor cursor) throws NoSuchTableInDbException {
+    //метод возвращает список созданных объектов класса PrimSell на основе данных из БД
+    private List<Entity> createPrimSellList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
 
@@ -232,10 +233,23 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String rentOrSell = cursor.getString(cursor.getColumnIndex("rentOrSell"));
+                String kindOfRoom = cursor.getString(cursor.getColumnIndex("kindOfRoom"));
+                String typeOfObject = cursor.getString(cursor.getColumnIndex("typeOfObject"));
+                String location = cursor.getString(cursor.getColumnIndex("location"));
+                String square = cursor.getString(cursor.getColumnIndex("square"));
+                String numOfRooms = cursor.getString(cursor.getColumnIndex("numOfRooms"));
+                String condition = cursor.getString(cursor.getColumnIndex("condition"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
 
                 //создаем объект класса PrimSell и добавляем его в список
+                PrimSell primSell = new PrimSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, district, addresses, rentOrSell, kindOfRoom, typeOfObject,
+                        location, square, numOfRooms, common, condition, heating);
 
+                result.add(primSell);
 
 
 
@@ -392,7 +406,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
 
     //метод возвращает список созданных объектов класса ArendPrim на основе данных из БД
-    private List<Entity> createPrimSellList(Cursor cursor) throws NoSuchTableInDbException {
+    private List<Entity> createArendPrimList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
 
@@ -456,10 +470,25 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String cityDistrict = cursor.getString(cursor.getColumnIndex("cityDistrict"));
+                String fullAddress = cursor.getString(cursor.getColumnIndex("fullAddress"));
+                String distanceToCity = cursor.getString(cursor.getColumnIndex("distanceToCity"));
+                String landSquare = cursor.getString(cursor.getColumnIndex("landSquare"));
+                String houseSquare = cursor.getString(cursor.getColumnIndex("houseSquare"));
+                String typeOfHouse = cursor.getString(cursor.getColumnIndex("typeOfHouse"));
+                String buildingsList = cursor.getString(cursor.getColumnIndex("buildingsList"));
+                String communications = cursor.getString(cursor.getColumnIndex("communications"));
+                String communicationsList = cursor.getString(cursor.getColumnIndex("communicationsList"));
+                String docs = cursor.getString(cursor.getColumnIndex("docs"));
+                String docsList = cursor.getString(cursor.getColumnIndex("docsList"));
 
                 //создаем объект класса HouseSell и добавляем его в список
+                HouseSell houseSell = new HouseSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, cityDistrict, fullAddress, distanceToCity, landSquare, houseSquare,
+                        typeOfHouse, buildingsList, communications, communicationsList, docs,
+                        docsList);
 
+                result.add(houseSell);
 
 
 
