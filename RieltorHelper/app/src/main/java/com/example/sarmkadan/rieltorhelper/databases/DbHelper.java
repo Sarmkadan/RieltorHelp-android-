@@ -7,8 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
+import com.example.sarmkadan.rieltorhelper.entities.Arend;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
+import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
+import com.example.sarmkadan.rieltorhelper.entities.KVsell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
@@ -84,7 +87,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 break;
             case "KVsell":
                 //получаем список всех объектов типа KVsell
-                result = createKVsellList(cursor);
+                result = createKvSellList(cursor);
                 break;
             case "HostelSell":
                 //получаем список всех объектов типа HostelSell
@@ -160,8 +163,8 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
         return result;
     }
 
-    //метод возвращает список созданных объектов класса Arend на основе данных из БД
-    private List<Entity> createArendList(Cursor cursor) throws NoSuchTableInDbException {
+    //метод возвращает список созданных объектов класса KVSell на основе данных из БД
+    private List<Entity> createKvSellList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
 
@@ -169,10 +172,33 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String numOfRooms = cursor.getString(cursor.getColumnIndex("numOfRooms"));
+                String numOfFloors = cursor.getString(cursor.getColumnIndex("numOfFloors"));
+                String rentOrSell = cursor.getString(cursor.getColumnIndex("rentOrSell"));
+                String typeOfHouse = cursor.getString(cursor.getColumnIndex("typeOfHouse"));
+                String fullSquare = cursor.getString(cursor.getColumnIndex("fullSquare"));
+                String livingSquare = cursor.getString(cursor.getColumnIndex("livingSquare"));
+                String kitchenSquare = cursor.getString(cursor.getColumnIndex("kitchenSquare"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
+                String conditionalApartment = cursor.getString(cursor.getColumnIndex("conditionalApartment"));
+                String furniture = cursor.getString(cursor.getColumnIndex("furniture"));
 
+                //создаем объект класса KVsell и добавляем его в список
+                KVsell kVsell = new KVsell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, district, addresses, numOfRooms, numOfFloors, rentOrSell, typeOfHouse,
+                        fullSquare, livingSquare, kitchenSquare, heating, conditionalApartment, furniture);
 
-                //создаем объект класса Arend и добавляем его в список
-
+                result.add(kVsell);
 
 
 
@@ -195,7 +221,15 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
-
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String s = cursor.getString(cursor.getColumnIndex(""));
 
                 //создаем объект класса ArendPrim и добавляем его в список
 
@@ -212,8 +246,8 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
 
-    //метод возвращает список созданных объектов класса ArendKVSell на основе данных из БД
-    private List<Entity> createKVsellList(Cursor cursor) throws NoSuchTableInDbException {
+    //метод возвращает список созданных объектов класса Arend на основе данных из БД
+    private List<Entity> createArendList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
 
@@ -221,12 +255,34 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
-
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String numOfRooms = cursor.getString(cursor.getColumnIndex("numOfRooms"));
+                String typeOfObject = cursor.getString(cursor.getColumnIndex("typeOfObject"));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String floor = cursor.getString(cursor.getColumnIndex("floor"));
+                String square = cursor.getString(cursor.getColumnIndex("square"));
+                String condition = cursor.getString(cursor.getColumnIndex("condition"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
+                String furniture = cursor.getString(cursor.getColumnIndex("furniture"));
+                String furnitureList = cursor.getString(cursor.getColumnIndex("furnitureList"));
+                String householdAppliances = cursor.getString(cursor.getColumnIndex("householdAppliances"));
+                String householdAppliancesList = cursor.getString(cursor.getColumnIndex("householdAppliancesList"));
 
                 //создаем объект класса ArendKVSell и добавляем его в список
+                Arend arend = new Arend(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, numOfRooms, typeOfObject, district, addresses, floor, square,
+                        condition, heating, furniture, furnitureList, householdAppliances,
+                        householdAppliancesList);
 
-
-
+                result.add(arend);
 
             } while (cursor.moveToNext());
         }
@@ -247,10 +303,31 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String systemHostel = cursor.getString(cursor.getColumnIndex("systemHostel"));
+                String numOfFloors = cursor.getString(cursor.getColumnIndex("numOfFloors"));
+                String typeOfHouse = cursor.getString(cursor.getColumnIndex("typeOfHouse"));
+                String fullSquare = cursor.getString(cursor.getColumnIndex("fullSquare"));
+                String condition = cursor.getString(cursor.getColumnIndex("condition"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
+                String havingFurniture = cursor.getString(cursor.getColumnIndex("havingFurniture"));
 
 
                 //создаем объект класса HostelSell и добавляем его в список
+                HostelSell hostelSell = new HostelSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, district, addresses, systemHostel, numOfFloors, typeOfHouse, fullSquare,
+                        condition, heating, havingFurniture);
 
+                result.add(hostelSell);
 
 
 
@@ -273,7 +350,15 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
-
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String s = cursor.getString(cursor.getColumnIndex(""));
 
                 //создаем объект класса EarthSell и добавляем его в список
 
@@ -299,7 +384,15 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
-
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String s = cursor.getString(cursor.getColumnIndex(""));
 
                 //создаем объект класса PrimSell и добавляем его в список
 
@@ -325,7 +418,15 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
 
             do {
                 //определяем переменные
-
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex("phoneNumber"));
+                String fullName = cursor.getString(cursor.getColumnIndex("fullName"));
+                String dateStr = cursor.getString(cursor.getColumnIndex("date"));
+                Date date = FormatingDate.getDateAsDate(dateStr);
+                int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
+                int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
+                String common = cursor.getString(cursor.getColumnIndex("common"));
+                String s = cursor.getString(cursor.getColumnIndex(""));
 
                 //создаем объект класса HouseSell и добавляем его в список
 
