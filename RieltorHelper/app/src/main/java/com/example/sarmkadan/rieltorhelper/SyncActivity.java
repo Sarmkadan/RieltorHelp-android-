@@ -3,6 +3,7 @@ package com.example.sarmkadan.rieltorhelper;
  * @author Kotov Alexandr
  */
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,13 @@ public class SyncActivity extends AppCompatActivity {
         // текстовое поле
         outView = (TextView) findViewById(R.id.synTextView);
         outView.setText("Проверка работы кнопки");
+
+        // Устанавливаем разрешения
+        if (android.os.Build.VERSION.SDK_INT > 9)
+        {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
         // обработчик
         btnSync.setOnClickListener(new View.OnClickListener() {
