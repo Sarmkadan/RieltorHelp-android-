@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.Arend;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
+import com.example.sarmkadan.rieltorhelper.entities.EarthSell;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
 import com.example.sarmkadan.rieltorhelper.entities.KVsell;
@@ -358,10 +359,23 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String cityDistrict = cursor.getString(cursor.getColumnIndex("cityDistrict"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String distanceToCity = cursor.getString(cursor.getColumnIndex("distanceToCity"));
+                String fullSquare = cursor.getString(cursor.getColumnIndex("fullSquare"));
+                String communicationsList = cursor.getString(cursor.getColumnIndex("communicationsList"));
+                String docs = cursor.getString(cursor.getColumnIndex("docs"));
+                String docsList = cursor.getString(cursor.getColumnIndex("docsList"));
+                String outbuildings = cursor.getString(cursor.getColumnIndex("outbuildings"));
+                String buildingsList = cursor.getString(cursor.getColumnIndex("buildingsList"));
+                String typeOfArea = cursor.getString(cursor.getColumnIndex("typeOfArea"));
 
                 //создаем объект класса EarthSell и добавляем его в список
+                EarthSell earthSell = new EarthSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, cityDistrict, addresses, distanceToCity, fullSquare, communicationsList,
+                        docs, docsList, outbuildings, buildingsList, typeOfArea);
 
+                result.add(earthSell);
 
 
 
