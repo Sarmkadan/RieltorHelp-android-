@@ -29,7 +29,7 @@ public class FormatingDate {
         Date result;
         try {
             result = simpleDateFormat.parse(str);
-        } catch (ParseException e) {
+        } catch (ParseException | NullPointerException e) {
             result = new Date();
         }
 

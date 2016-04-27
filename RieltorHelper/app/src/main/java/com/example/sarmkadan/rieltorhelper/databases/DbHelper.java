@@ -19,6 +19,7 @@ import com.example.sarmkadan.rieltorhelper.entities.PrimSell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -112,6 +113,8 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
         }
 
         cursor.close();
+
+        Collections.reverse(result);
 
         return result;
     }
