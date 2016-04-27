@@ -30,4 +30,6 @@
     </string-array>
     <string name="title_activity_sync">SyncActivity</string>
     <string name="text_btn_sync">Синхронизация</string>
+    <string name="txt_btnExport">Экспорт</string>
+    <string name="txt_btnClearCach">Очистить кэш</string>
 </resources>
