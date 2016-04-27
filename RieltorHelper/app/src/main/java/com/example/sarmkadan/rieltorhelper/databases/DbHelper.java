@@ -8,11 +8,13 @@ import android.util.Log;
 
 import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInDbException;
 import com.example.sarmkadan.rieltorhelper.entities.Arend;
+import com.example.sarmkadan.rieltorhelper.entities.ArendPrim;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
 import com.example.sarmkadan.rieltorhelper.entities.EarthSell;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
 import com.example.sarmkadan.rieltorhelper.entities.KVsell;
+import com.example.sarmkadan.rieltorhelper.entities.PrimSell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
 import java.util.ArrayList;
@@ -213,7 +215,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
 
-    //метод возвращает список созданных объектов класса ArendPrim на основе данных из БД
+    //метод возвращает список созданных объектов класса primSell на основе данных из БД
     private List<Entity> createArendPrimList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
@@ -232,7 +234,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 String common = cursor.getString(cursor.getColumnIndex("common"));
                 String s = cursor.getString(cursor.getColumnIndex(""));
 
-                //создаем объект класса ArendPrim и добавляем его в список
+                //создаем объект класса PrimSell и добавляем его в список
 
 
 
@@ -389,7 +391,7 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
     }
 
 
-    //метод возвращает список созданных объектов класса PrimSell на основе данных из БД
+    //метод возвращает список созданных объектов класса ArendPrim на основе данных из БД
     private List<Entity> createPrimSellList(Cursor cursor) throws NoSuchTableInDbException {
 
         List<Entity> result = new ArrayList<>();
@@ -406,10 +408,24 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String rentOrSell = cursor.getString(cursor.getColumnIndex("rentOrSell"));
+                String kindOfRoom = cursor.getString(cursor.getColumnIndex("kindOfRoom"));
+                String typeOfObject = cursor.getString(cursor.getColumnIndex("typeOfObject"));
+                String location = cursor.getString(cursor.getColumnIndex("location"));
+                String numOfFloors = cursor.getString(cursor.getColumnIndex("numOfFloors"));
+                String square = cursor.getString(cursor.getColumnIndex("square"));
+                String numOfRooms = cursor.getString(cursor.getColumnIndex("numOfRooms"));
+                String condition = cursor.getString(cursor.getColumnIndex("condition"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
 
-                //создаем объект класса PrimSell и добавляем его в список
+                //создаем объект класса ArendPrim и добавляем его в список
+                ArendPrim arendPrim = new ArendPrim(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, district, addresses, rentOrSell, kindOfRoom, typeOfObject, location,
+                        numOfFloors, square, numOfRooms, condition, heating);
 
+                result.add(arendPrim);
 
 
 
