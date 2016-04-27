@@ -46,7 +46,7 @@ CREATE TABLE ArendPrim (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, ph
 CREATE TABLE HostelSellImage (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, photo BLOB, title STRING, HostelSellID INTEGER REFERENCES HostelSell (ID) ON DELETE CASCADE);
 
 -- Таблица: PrimSell
-CREATE TABLE PrimSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING, typeOfObject STRING, location STRING, numOfRooms STRING, square STRING, numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER, costUsd INTEGER, common STRING);
+CREATE TABLE PrimSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, district STRING, addresses STRING, rentOrSell STRING, kindOfRoom STRING, typeOfObject STRING, location STRING, numOfFloors STRING, square STRING, numOfRooms STRING, condition STRING, heating STRING, costUah INTEGER, costUsd INTEGER, common STRING);
 
 -- Таблица: HouseSell
 CREATE TABLE HouseSell (ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, phoneNumber STRING, fullName STRING, date STRING, cytyDistrict STRING, fullAddress STRING, distanceToCity INTEGER, landSquare STRING, houseSquare STRING, typeOfHouse STRING, buildingsList STRING, communications STRING, communicationsList STRING, docs STRING, docList STRING, costUah INTEGER, costUsd INTEGER, common STRING);
