@@ -13,6 +13,7 @@ import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
 import com.example.sarmkadan.rieltorhelper.entities.EarthSell;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
 import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
+import com.example.sarmkadan.rieltorhelper.entities.HouseSell;
 import com.example.sarmkadan.rieltorhelper.entities.KVsell;
 import com.example.sarmkadan.rieltorhelper.entities.PrimSell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
@@ -469,10 +470,25 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String cityDistrict = cursor.getString(cursor.getColumnIndex("cityDistrict"));
+                String fullAddress = cursor.getString(cursor.getColumnIndex("fullAddress"));
+                String distanceToCity = cursor.getString(cursor.getColumnIndex("distanceToCity"));
+                String landSquare = cursor.getString(cursor.getColumnIndex("landSquare"));
+                String houseSquare = cursor.getString(cursor.getColumnIndex("houseSquare"));
+                String typeOfHouse = cursor.getString(cursor.getColumnIndex("typeOfHouse"));
+                String buildingsList = cursor.getString(cursor.getColumnIndex("buildingsList"));
+                String communications = cursor.getString(cursor.getColumnIndex("communications"));
+                String communicationsList = cursor.getString(cursor.getColumnIndex("communicationsList"));
+                String docs = cursor.getString(cursor.getColumnIndex("docs"));
+                String docsList = cursor.getString(cursor.getColumnIndex("docsList"));
 
                 //создаем объект класса HouseSell и добавляем его в список
+                HouseSell houseSell = new HouseSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, cityDistrict, fullAddress, distanceToCity, landSquare, houseSquare,
+                        typeOfHouse, buildingsList, communications, communicationsList, docs,
+                        docsList);
 
+                result.add(houseSell);
 
 
 
