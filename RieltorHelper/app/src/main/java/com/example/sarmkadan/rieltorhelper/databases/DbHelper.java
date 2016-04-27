@@ -10,6 +10,7 @@ import com.example.sarmkadan.rieltorhelper.databases.dbExceptions.NoSuchTableInD
 import com.example.sarmkadan.rieltorhelper.entities.Arend;
 import com.example.sarmkadan.rieltorhelper.entities.ArendRoom;
 import com.example.sarmkadan.rieltorhelper.entities.Entity;
+import com.example.sarmkadan.rieltorhelper.entities.HostelSell;
 import com.example.sarmkadan.rieltorhelper.entities.KVsell;
 import com.example.sarmkadan.rieltorhelper.utils.FormatingDate;
 
@@ -310,10 +311,23 @@ public class DbHelper extends SQLiteOpenHelper implements DataStore {
                 int costUah = cursor.getInt(cursor.getColumnIndex("costUah"));
                 int costUsd = cursor.getInt(cursor.getColumnIndex("costUsd"));
                 String common = cursor.getString(cursor.getColumnIndex("common"));
-                String s = cursor.getString(cursor.getColumnIndex(""));
+                String district = cursor.getString(cursor.getColumnIndex("district"));
+                String addresses = cursor.getString(cursor.getColumnIndex("addresses"));
+                String systemHostel = cursor.getString(cursor.getColumnIndex("systemHostel"));
+                String numOfFloors = cursor.getString(cursor.getColumnIndex("numOfFloors"));
+                String typeOfHouse = cursor.getString(cursor.getColumnIndex("typeOfHouse"));
+                String fullSquare = cursor.getString(cursor.getColumnIndex("fullSquare"));
+                String condition = cursor.getString(cursor.getColumnIndex("condition"));
+                String heating = cursor.getString(cursor.getColumnIndex("heating"));
+                String havingFurniture = cursor.getString(cursor.getColumnIndex("havingFurniture"));
+
 
                 //создаем объект класса HostelSell и добавляем его в список
+                HostelSell hostelSell = new HostelSell(id, phoneNumber, fullName, date, costUah, costUsd,
+                        common, district, addresses, systemHostel, numOfFloors, typeOfHouse, fullSquare,
+                        condition, heating, havingFurniture);
 
+                result.add(hostelSell);
 
 
 
