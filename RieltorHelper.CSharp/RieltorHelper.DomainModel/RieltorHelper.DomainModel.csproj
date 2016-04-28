@@ -42,9 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RieltorDataTable.cs" />
-    <Compile Include="RieltorWebListener.cs" />
-    <Compile Include="SQLiteRieltorRepository.cs" />
+    <Compile Include="RieltorDbContext.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RieltorHelper.Infrastructure\RieltorHelper.Infrastructure.csproj">
