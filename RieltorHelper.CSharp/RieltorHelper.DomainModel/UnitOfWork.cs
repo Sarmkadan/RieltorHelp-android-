@@ -44,7 +44,7 @@ namespace RieltorHelper.DomainModel
             {
                 if (disposing)
                 {
-                    db.Dispose();
+                    _context.Dispose();
                 }
                 this.disposed = true;
             }

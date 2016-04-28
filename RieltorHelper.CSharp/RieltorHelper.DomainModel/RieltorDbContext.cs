@@ -1,4 +1,5 @@
 using System;
+using System.Data.Entity;
 
 namespace RieltorHelper.DomainModel
 {
