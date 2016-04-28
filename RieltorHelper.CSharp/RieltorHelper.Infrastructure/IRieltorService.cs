@@ -5,13 +5,13 @@ using System.Text;
 
 namespace RieltorHelper.Infrastructure
 {
-    public interface IRieltorService
+    public interface IRieltorService<T, X> where T: IRieltorRepository<X> where X : class
     {
         int GetDataTablesCount(); 
-        IEnumerable<IDataTable> GetDataTables(int offset, int count);
-        IDataTable GetDataTable(int id);
-        void CreateDataTable(IDataTable value);
-        void EditDataTable(int id, IDataTable value);
+        IEnumerable<T> GetDataTables(int offset, int count);
+        T GetDataTable(int id);
+        void CreateDataTable(T value);
+        void EditDataTable(int id, T value);
         void RemoveDataTable(int id);
     }
 }
