@@ -16,7 +16,7 @@ namespace RieltorHelper.DomainModel
         {
             _context = new RieltorDbContext();
         }
-        
+
         /*
         Entity repositories as public properties        
         as        
@@ -25,12 +25,12 @@ namespace RieltorHelper.DomainModel
             get
             {
                 if (entityRepo == null)
-                    entityRepo = new entityRepo(db);
+                    entityRepo = new entityRepo(_context);
                 return entityRepo;
             }
         }
         */
-        
+
         public void Save()
         {
             _context.SaveChanges();
