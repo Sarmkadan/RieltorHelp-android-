@@ -1,0 +1,1 @@
+﻿Example of call: http://localhost:53736/Client.svc/getClients
