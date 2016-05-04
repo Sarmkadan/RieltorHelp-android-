@@ -7,10 +7,11 @@ namespace RieltorHelper.WebApiService
     [RoutePrefix('api/v1')] //prefix to all method routes in this class
     public class DataTablesController: ApiController, IRieltorService
     {
-        IRieltorRepository repo;
-        public DataTablesController(IRieltorRepository repo)
+        private IUnitOfWork dbUbit;
+        
+        public DataTablesController(IUnitOfWork dbUbit)
         {
-            this.repo = repo;
+            this.dbUbit = dbUbit;
         }
         
         [Route("some_method")] //this route is equal with http://<address>/api/v1/some_method
@@ -35,6 +36,7 @@ namespace RieltorHelper.WebApiService
         <route> = Route template for this method. I.e. if Route attribute name parameter will be "value" then the total route will be http://<address+port>/api/v1/value
         <Http_method> = one of the Http methods: HttpGet, HttpPost, HttpPut, HttpDelete
         <parameters> = can be optional (string param_name="") or required (string param_name)
+        return only for NON void methods
         */
     }    
 }
