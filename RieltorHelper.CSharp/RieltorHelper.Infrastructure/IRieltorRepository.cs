@@ -7,11 +7,11 @@ namespace RieltorHelper.Infrastructure
 {
     public interface IRieltorRepository<T> where T: class
     {
-        int GetTablesCount();
-        IEnumerable<T> GetTables(int offset, int count);
-        T GetTable(int id);
-        void CreateTable(T table);
-        void EditTable(int id, T table);
-        void DeleteTable(int id);
+        int GetCount();
+        IEnumerable<T> GetAll(int offset, int count);
+        T Get(int id);
+        void Create(T value);
+        void Edit(int id, T value);
+        void Delete(int id);
     }
 }

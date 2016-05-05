@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="IDataTable.cs" />
     <Compile Include="IRieltorRepository.cs" />
-    <Compile Include="IRieltorService.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,10 +7,6 @@ namespace RieltorHelper.Infrastructure
 {
     public interface IUnitOfWork
     {
-        /*
-         * Enumerate all the repo properties
-            IRieltorRepository<T> repoProperty
-        */
         void Save();
     }
 }

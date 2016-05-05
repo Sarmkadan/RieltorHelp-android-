@@ -1,0 +1,46 @@
+using RieltorHelper.DomainModel;
+using RieltorHelper.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Web.Http;
+
+namespace RieltorHelper.WebApiService
+{
+    [RoutePrefix("api/v1")] //prefix to all method routes in this class
+    public class RieltorHelperApiController: ApiController
+    {
+        private UnitOfWork dbUbit;
+        
+        public RieltorHelperApiController()
+        {
+            this.dbUbit = new UnitOfWork(); //dbUbit;
+        }
+        
+        [Route("users/get")] //this route is equal to http://<address>/api/v1/some_method
+        [HttpGet]
+        public IEnumerable<User> Get(string fio = "")
+        {
+            return dbUbit.UserRespo.GetByFIO(fio);
+        }
+        
+        /*
+        Build other API methods
+        like
+        
+        [Route("<route>")]
+        [<Http_method>]
+        public <return_result> <Method_Name>(<parameters>)
+        {
+            return <return_result>;
+        }
+        
+        where:
+        <route> = Route template for this method. I.e. if Route attribute name parameter will be "value" then the total route will be http://<address+port>/api/v1/value
+        <Http_method> = one of the Http methods: HttpGet, HttpPost, HttpPut, HttpDelete
+        <parameters> = can be optional (string param_name="") or required (string param_name)
+        return only for NON void methods
+        */
+    }    
+}

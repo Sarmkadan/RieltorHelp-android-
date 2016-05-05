@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.DomainModel", "RieltorHelper.DomainModel\RieltorHelper.DomainModel.csproj", "{84D0BB91-9859-48C5-8573-28A7A2751F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.DomainModel.Test", "RieltorHelper.DomainModel.Test\RieltorHelper.DomainModel.Test.csproj", "{81108357-E518-44CF-B2CB-8CD5C964AFCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIeltorHelper.WebService", "RIeltorHelper.WebService\RIeltorHelper.WebService.csproj", "{98190A15-7CE9-483C-9FB9-A1C157539796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81108357-E518-44CF-B2CB-8CD5C964AFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98190A15-7CE9-483C-9FB9-A1C157539796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98190A15-7CE9-483C-9FB9-A1C157539796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98190A15-7CE9-483C-9FB9-A1C157539796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98190A15-7CE9-483C-9FB9-A1C157539796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

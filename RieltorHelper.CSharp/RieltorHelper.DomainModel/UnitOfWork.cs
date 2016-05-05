@@ -1,22 +1,34 @@
+using RieltorHelper.Infrastructure;
 using System;
+
 
 namespace RieltorHelper.DomainModel
 {
-    public class UnitOfWork: IDisposable
+    public class UnitOfWork: IDisposable, IUnitOfWork
     {
         private RieltorDbContext _context;
-        
+
+        private UsersRepository userRepo;
         /*
         Entity repositories as private fields
         as
         private SomeEntityRepository entityRepo;
         */
-        
+
         public UnitOfWork()
         {
             _context = new RieltorDbContext();
         }
 
+        public UsersRepository UserRespo
+        {
+            get
+            {
+                if (userRepo == null)
+                    userRepo = new UsersRepository(_context);
+                return userRepo;
+            }
+        }
         /*
         Entity repositories as public properties        
         as        
