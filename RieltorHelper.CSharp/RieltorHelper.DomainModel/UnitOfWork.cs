@@ -1,52 +1,43 @@
-using RieltorHelper.Infrastructure;
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RieltorHelper.DomainModel
 {
-    public class UnitOfWork: IDisposable//, IUnitOfWork
+    public class UnitOfWork: IUnitOfWork
     {
-        private RieltorDbContext _context;
+        RieltorDbContext _context;
+        bool _disposed = false;
 
-        private UsersRepository UserRepo;
-
+        public RieltorDbContext dbContext
+        {
+            get
+            {
+                if (_context == null)
+                    _context = new RieltorDbContext();
+                return _context;
+            }
+        }
 
         public UnitOfWork()
         {
             _context = new RieltorDbContext();
         }
         
-
-        public IRieltorRepository<User> UserRepository
-        {
-            get
-            {
-                if (UserRepo == null)
-                    UserRepo = new UsersRepository(_context);
-                return UserRepo;
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public void Save()
         {
             _context.SaveChanges();
         }
         
-        private bool disposed = false;
- 
         public virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!_disposed)
             {
                 if (disposing)
                 {
                     _context.Dispose();
                 }
-                this.disposed = true;
+                _disposed = true;
             }
         }
     

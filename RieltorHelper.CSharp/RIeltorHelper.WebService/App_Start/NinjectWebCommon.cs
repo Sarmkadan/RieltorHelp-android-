@@ -10,8 +10,7 @@ namespace RIeltorHelper.WebService.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-
-    using RieltorHelper.Infrastructure;
+    
     using RieltorHelper.DomainModel;
     using System.Web.Http;
     public static class NinjectWebCommon 
@@ -60,7 +59,9 @@ namespace RIeltorHelper.WebService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            //kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            kernel.Bind<IRieltorService>().To<RieltorService>();
+            kernel.Bind(typeof(IGenericRepository<>)).To(typeof(DatabaseGenericRepository<>));
             kernel.Bind<RieltorDbContext>().ToSelf().InRequestScope();
         }        
     }

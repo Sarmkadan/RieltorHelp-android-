@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
-namespace RieltorHelper.Infrastructure
+namespace RieltorHelper.DomainModel
 {
-    public interface IRieltorRepository<T> where T: class
+    public interface IGenericRepository<T> where T: class
     {
         int GetCount();
-        IEnumerable<T> Get();
-        IEnumerable<T> GetQueried(Func<T, bool> query);
+        IQueryable<T> Get();
+        IQueryable<T> Get(Expression<Func<T, bool>> query);
         T Get(int id);
         void Create(T value);
         void Edit(int id, T value);

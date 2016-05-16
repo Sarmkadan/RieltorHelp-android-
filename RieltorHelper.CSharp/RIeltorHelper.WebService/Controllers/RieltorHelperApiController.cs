@@ -1,5 +1,4 @@
 using RieltorHelper.DomainModel;
-using RieltorHelper.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +10,25 @@ namespace RieltorHelper.WebApiService
     [RoutePrefix("api/v1")] //prefix to all method routes in this class
     public class RieltorHelperApiController: ApiController
     {
-        private UnitOfWork dbUbit;
+        private IRieltorService service;
         
-        public RieltorHelperApiController()//IUnitOfWork dbUbit)
+        public RieltorHelperApiController(IRieltorService service)
         {
-            this.dbUbit = new UnitOfWork();//dbUbit;
-            /*
-            this.dbUbit.UserRepository.Create(new User() { Id = 1, FIO = "kos koska", About = "some user", Phone = 123 });
-            this.dbUbit.UserRepository.Create(new User() { Id = 2, FIO = "some guy", About = "another user", Phone = 432});
-            this.dbUbit.UserRepository.Create(new User() { Id = 3, FIO = "Arya Stark", About = "a girl has no name", Phone = 321 });*/
+            this.service = service;
         }
         
         [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
-        public IEnumerable<User> Get(string fio = "")
+        public IEnumerable<User> GetUsers(string fio = "")
         {
-            return dbUbit.UserRepository.GetQueried(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
-        }
-
-        [Route("users/getall")] //this route is equal to http://<address>/api/v1/getAll
-        [HttpGet]
-        public IEnumerable<User> Get()
-        {
-            return dbUbit.UserRepository.Get();
+            if (fio != "")
+            {
+                return service.GetUsers(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
+            }
+            else
+            {
+                return service.GetUsers();
+            }
         }
 
         /*

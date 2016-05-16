@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabaseEntity.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="IRieltorService.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="LocalMemoryGenericRepository.cs" />
     <Compile Include="Migrations\201605161020438_InitialMigration.cs" />
     <Compile Include="Migrations\201605161020438_InitialMigration.Designer.cs">
       <DependentUpon>201605161020438_InitialMigration.cs</DependentUpon>
@@ -58,15 +63,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RieltorDbContext.cs" />
+    <Compile Include="RieltorService.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="UsersRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RieltorHelper.Infrastructure\RieltorHelper.Infrastructure.csproj">
-      <Project>{723600ba-23ae-443e-b02b-24945dda2ea1}</Project>
-      <Name>RieltorHelper.Infrastructure</Name>
-    </ProjectReference>
+    <Compile Include="DatabaseGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
