@@ -1,3 +1,4 @@
+using RieltorHelper.Infrastructure;
 using System;
 using System.Data.Entity;
 
@@ -10,6 +11,6 @@ namespace RieltorHelper.DomainModel
         as
         public DbSet<entity> Entities {get;set;}
         */
-        public DbSet<User> Users { get; set; }
+        public DbSet<IUser> Users { get; set; }
     }
 }

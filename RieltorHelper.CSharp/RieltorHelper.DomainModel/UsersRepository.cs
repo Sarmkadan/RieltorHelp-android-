@@ -6,7 +6,7 @@ using RieltorHelper.Infrastructure;
 
 namespace RieltorHelper.DomainModel
 {
-    public class UsersRepository : IRieltorRepository<User>
+    public class UsersRepository : IRieltorRepository<IUser>
     {
         private RieltorDbContext _context;
 
@@ -15,12 +15,12 @@ namespace RieltorHelper.DomainModel
             _context = context;
         }
 
-        public IEnumerable<User> GetByFIO(string fio)
+        public IEnumerable<IUser> GetByFIO(string fio)
         {
             return _context.Users.Where(u => u.FIO.Contains(fio)).ToList();
         }
 
-        public void Create(User value)
+        public void Create(IUser value)
         {
             _context.Users.Add(value);
             _context.SaveChanges();
@@ -36,7 +36,7 @@ namespace RieltorHelper.DomainModel
             }
         }
 
-        public void Edit(int id, User value)
+        public void Edit(int id, IUser value)
         {
             if (value.Id == id)
             {
@@ -45,12 +45,12 @@ namespace RieltorHelper.DomainModel
             }
         }
 
-        public User Get(int id)
+        public IUser Get(int id)
         {
             return _context.Users.Find(id);
         }
 
-        public IEnumerable<User> GetAll(int offset, int count)
+        public IEnumerable<IUser> GetAll(int offset, int count)
         {
             return _context.Users.Take(count);
         }

@@ -7,6 +7,7 @@ namespace RieltorHelper.Infrastructure
 {
     public interface IUnitOfWork
     {
+        IRieltorRepository<IUser> UserRepository { get; set; }
         void Save();
     }
 }

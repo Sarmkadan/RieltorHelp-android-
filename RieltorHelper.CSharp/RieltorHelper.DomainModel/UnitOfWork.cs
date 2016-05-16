@@ -9,18 +9,15 @@ namespace RieltorHelper.DomainModel
         private RieltorDbContext _context;
 
         private UsersRepository userRepo;
-        /*
-        Entity repositories as private fields
-        as
-        private SomeEntityRepository entityRepo;
-        */
+
 
         public UnitOfWork()
         {
             _context = new RieltorDbContext();
         }
+        
 
-        public UsersRepository UserRespo
+        public IRieltorRepository<IUser> UserRepository
         {
             get
             {
@@ -28,20 +25,11 @@ namespace RieltorHelper.DomainModel
                     userRepo = new UsersRepository(_context);
                 return userRepo;
             }
-        }
-        /*
-        Entity repositories as public properties        
-        as        
-        public SomeEntityRepository EntityRepo
-        {
-            get
+            set
             {
-                if (entityRepo == null)
-                    entityRepo = new entityRepo(_context);
-                return entityRepo;
+                throw new NotImplementedException();
             }
         }
-        */
 
         public void Save()
         {
