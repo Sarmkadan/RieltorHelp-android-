@@ -16,12 +16,18 @@ namespace RieltorHelper.WebApiService
         {
             this.service = service;
         }
-        
+
+        /// <summary>
+        /// Get list of users satisfying the fio parameter
+        /// </summary>
+        /// <param name="ACCESS_TOKEN"> Access token of the application</param>
+        /// <param name="fio"> Value for fio </param>
+        /// <returns>IEnumerable of users</returns>
         [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
-        public IEnumerable<User> GetUsers(string fio = "")
+        public IEnumerable<User> GetUsers(string ACCESS_TOKEN, string fio = null)
         {
-            if (fio != "")
+            if (!string.IsNullOrEmpty(fio))
             {
                 return service.GetUsers(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
             }
