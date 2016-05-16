@@ -1,6 +1,8 @@
 using RieltorHelper.Infrastructure;
 using System;
 using System.Data.Entity;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RieltorHelper.DomainModel
 {
@@ -11,6 +13,11 @@ namespace RieltorHelper.DomainModel
         as
         public DbSet<entity> Entities {get;set;}
         */
-        public DbSet<IUser> Users { get; set; }
+        public RieltorDbContext() : base("DefaultConnection")
+        {
+            //Database.SetInitializer<RieltorDbContext>(new DropCreateDatabaseAlways<RieltorDbContext>());
+        }
+        
+        public DbSet<User> Users { get; set; }
     }
 }

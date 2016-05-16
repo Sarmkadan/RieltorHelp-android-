@@ -4,11 +4,11 @@ using System;
 
 namespace RieltorHelper.DomainModel
 {
-    public class UnitOfWork: IDisposable, IUnitOfWork
+    public class UnitOfWork: IDisposable//, IUnitOfWork
     {
         private RieltorDbContext _context;
 
-        private UsersRepository userRepo;
+        private UsersRepository UserRepo;
 
 
         public UnitOfWork()
@@ -17,13 +17,13 @@ namespace RieltorHelper.DomainModel
         }
         
 
-        public IRieltorRepository<IUser> UserRepository
+        public IRieltorRepository<User> UserRepository
         {
             get
             {
-                if (userRepo == null)
-                    userRepo = new UsersRepository(_context);
-                return userRepo;
+                if (UserRepo == null)
+                    UserRepo = new UsersRepository(_context);
+                return UserRepo;
             }
             set
             {

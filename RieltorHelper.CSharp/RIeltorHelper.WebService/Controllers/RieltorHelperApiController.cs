@@ -13,18 +13,29 @@ namespace RieltorHelper.WebApiService
     {
         private UnitOfWork dbUbit;
         
-        public RieltorHelperApiController()
+        public RieltorHelperApiController()//IUnitOfWork dbUbit)
         {
-            this.dbUbit = new UnitOfWork(); //dbUbit;
+            this.dbUbit = new UnitOfWork();//dbUbit;
+            /*
+            this.dbUbit.UserRepository.Create(new User() { Id = 1, FIO = "kos koska", About = "some user", Phone = 123 });
+            this.dbUbit.UserRepository.Create(new User() { Id = 2, FIO = "some guy", About = "another user", Phone = 432});
+            this.dbUbit.UserRepository.Create(new User() { Id = 3, FIO = "Arya Stark", About = "a girl has no name", Phone = 321 });*/
         }
         
-        [Route("users/get")] //this route is equal to http://<address>/api/v1/some_method
+        [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
         public IEnumerable<User> Get(string fio = "")
         {
-            return dbUbit.UserRespo.GetByFIO(fio);
+            return dbUbit.UserRepository.GetQueried(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
         }
-        
+
+        [Route("users/getall")] //this route is equal to http://<address>/api/v1/getAll
+        [HttpGet]
+        public IEnumerable<User> Get()
+        {
+            return dbUbit.UserRepository.Get();
+        }
+
         /*
         Build other API methods
         like
