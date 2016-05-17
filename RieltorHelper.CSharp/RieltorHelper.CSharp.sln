@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.DomainModel", "RieltorHelper.DomainModel\RieltorHelper.DomainModel.csproj", "{84D0BB91-9859-48C5-8573-28A7A2751F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIeltorHelper.WebService", "RIeltorHelper.WebService\RIeltorHelper.WebService.csproj", "{98190A15-7CE9-483C-9FB9-A1C157539796}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RieltorHelper.IdentityWebApp", "RieltorHelper.IdentityWebApp\RieltorHelper.IdentityWebApp.csproj", "{6940FD5A-2060-4BBF-BD13-92F76E3EEEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84D0BB91-9859-48C5-8573-28A7A2751F56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98190A15-7CE9-483C-9FB9-A1C157539796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98190A15-7CE9-483C-9FB9-A1C157539796}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98190A15-7CE9-483C-9FB9-A1C157539796}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98190A15-7CE9-483C-9FB9-A1C157539796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6940FD5A-2060-4BBF-BD13-92F76E3EEEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6940FD5A-2060-4BBF-BD13-92F76E3EEEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6940FD5A-2060-4BBF-BD13-92F76E3EEEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6940FD5A-2060-4BBF-BD13-92F76E3EEEBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
