@@ -21,13 +21,13 @@ namespace RieltorHelper.IdentityWebApp.Controllers
         /// <summary>
         /// Get list of users satisfying the fio parameter
         /// </summary>
-        /// <param name="ACCESS_TOKEN"> Access token of the application</param>
+        /// <param name="access_token"> Access token of the application</param>
         /// <param name="fio"> Value for fio </param>
         /// <returns>IEnumerable of users</returns>
         [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
-        //[Authorize]
-        public IEnumerable<User> GetUsers(string ACCESS_TOKEN, string fio = "")
+        [Authorize]
+        public IEnumerable<User> GetUsers(string access_token, string fio = "")
         {
             if (fio != "")
             {

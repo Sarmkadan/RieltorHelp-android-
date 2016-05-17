@@ -507,7 +507,7 @@
             <summary>
             Get list of users satisfying the fio parameter
             </summary>
-            <param name="ACCESS_TOKEN"> Access token of the application</param>
+            <param name="access_token"> Access token of the application</param>
             <param name="fio"> Value for fio </param>
             <returns>IEnumerable of users</returns>
         </member>
