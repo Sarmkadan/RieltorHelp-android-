@@ -20,6 +20,6 @@ grant_type=password&username=<UserName>&password=<Password>
 
 access_token will be in response body.
 
-To interact with API methods include access_token to query string (1) of request header (2):
+To interact with API methods include access_token to query string (1) or request header (2):
 1. <request>?access_token=<Token>
 2. Authorization: Bearer <Token>
