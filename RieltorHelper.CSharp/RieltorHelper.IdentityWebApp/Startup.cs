@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 using System.Web;
+using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(RieltorHelper.IdentityWebApp.Startup))]
 
@@ -13,6 +14,7 @@ namespace RieltorHelper.IdentityWebApp
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
             app.Use(async (context, next) =>
             {
                 if (context.Request.QueryString.HasValue)
