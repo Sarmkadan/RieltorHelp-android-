@@ -8,8 +8,10 @@
     echo "QUERY_STRING :".$_SERVER['QUERY_STRING'];
     // вот так можно обработать переданный url
     // или же что более правильно можно тестировать регуляркой
-    if ($_SERVER['QUERY_STRING']=='/') {
-     echo "<br>основной корень<br>";
+    if ($_SERVER['QUERY_STRING']=='url=/') {
+     echo "<br>ROOT !!!!!<br>";
+    }else {
+     echo "<br>RestData</br>";
     }
   }
   
