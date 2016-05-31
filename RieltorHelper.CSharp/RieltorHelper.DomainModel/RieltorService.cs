@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RieltorHelper.DomainModel
 {
@@ -18,14 +19,29 @@ namespace RieltorHelper.DomainModel
             this.userRepo = userRepo;
         }
 
-        public IEnumerable<User> GetUsers()
+        public void Dispose()
+        {
+            unitOfWork.Dispose();
+        }
+
+        public IQueryable<User> GetUsers(Expression<Func<User, bool>> predicate)
+        {
+            return userRepo.Get(predicate);
+        }
+
+        public Task<IQueryable<User>> GetUsersAsync(Expression<Func<User, bool>> predicate)
+        {
+            return userRepo.GetAsync(predicate);
+        }
+
+        public IQueryable<User> GetUsers()
         {
             return userRepo.Get();
         }
 
-        public IEnumerable<User> GetUsers(Expression<Func<User, bool>> predicate)
+        public Task<IQueryable<User>> GetUsersAsync()
         {
-            return userRepo.Get(predicate);
+            return userRepo.GetAsync();
         }
 
         public void CreateUser(User value)
@@ -33,10 +49,10 @@ namespace RieltorHelper.DomainModel
             userRepo.Create(value);
         }
 
-        public void Dispose()
-        {
-            unitOfWork.Dispose();
-        }
 
+        public Task CreateUserAsync(User value)
+        {
+            return userRepo.CreateAsync(value);
+        }
     }
 }

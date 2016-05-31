@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RieltorHelper.DomainModel
 {
@@ -20,12 +21,27 @@ namespace RieltorHelper.DomainModel
             entities.Add(value);
         }
 
+        public Task CreateAsync(T value)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Edit(int id, T value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task EditAsync(int id, T value)
         {
             throw new NotImplementedException();
         }
@@ -45,9 +61,29 @@ namespace RieltorHelper.DomainModel
             return entities.AsQueryable().Where(query);
         }
 
+        public Task<IQueryable<T>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IQueryable<T>> GetAsync(Expression<Func<T, bool>> query)
+        {
+            throw new NotImplementedException();
+        }
+
         public int GetCount()
         {
             return entities.Count;
+        }
+
+        public Task<int> GetCountAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

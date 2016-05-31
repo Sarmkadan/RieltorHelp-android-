@@ -29,7 +29,7 @@ namespace RieltorHelper.DomainModel
             _context.SaveChanges();
         }
         
-        public virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (!_disposed)
             {

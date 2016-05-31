@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace RieltorHelper.IdentityWebApp.Controllers
 {
     [RoutePrefix("api/v1")] //prefix to all method routes in this class
+    //Uncomment this line to enable authorization
+    //[Authorize]
     public class RieltorHelperApiController: ApiController
     {
         private IRieltorService service;
@@ -26,16 +29,15 @@ namespace RieltorHelper.IdentityWebApp.Controllers
         /// <returns>IEnumerable of users</returns>
         [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
-        [Authorize]
-        public IEnumerable<User> GetUsers(string access_token, string fio = "")
+        public async Task<IEnumerable<User>> GetUsers(string access_token, string fio = "")
         {
             if (fio != "")
             {
-                return service.GetUsers(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
+                return await service.GetUsersAsync(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
             }
             else
             {
-                return service.GetUsers();
+                return await service.GetUsersAsync();
             }
         }
 

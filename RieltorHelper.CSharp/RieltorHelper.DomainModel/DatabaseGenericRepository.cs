@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace RieltorHelper.DomainModel
 {
@@ -61,6 +62,39 @@ namespace RieltorHelper.DomainModel
             return _context.Set<T>().Count();
         }
 
-        
+        public Task<int> GetCountAsync()
+        {
+            return Task<int>.Factory.StartNew(() => GetCount());
+        }
+
+        public Task<IQueryable<T>> GetAsync()
+        {
+            return Task<IQueryable<T>>.Factory.StartNew(() => Get());
+        }
+
+        public Task<IQueryable<T>> GetAsync(Expression<Func<T, bool>> query)
+        {
+            return Task<IQueryable<T>>.Factory.StartNew(() => Get(query));
+        }
+
+        public Task<T> GetAsync(int id)
+        {
+            return Task<T>.Factory.StartNew(() => Get(id));
+        }
+
+        public Task CreateAsync(T value)
+        {
+            return Task.Factory.StartNew(() => Create(value));
+        }
+
+        public Task EditAsync(int id, T value)
+        {
+            return Task.Factory.StartNew(() => Edit(id, value));
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            return Task.Factory.StartNew(() => Delete(id));
+        }
     }
 }
