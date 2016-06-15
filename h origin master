@@ -1,0 +1,90 @@
+[33me201b16[m I'm a worker now! :)
+[33m64138b4[m Реализовано вытаскивание объекта типа Arend из БД
+[33m4679074[m Реализован класс Arend
+[33mf3290cc[m KvSell реализован в DbHelper
+[33m90cc0b1[m Реализован класс KVsell
+[33mfd3db00[m Добавлены заготовки методов в dbHelper для вытаскивание сущностей из всех таблиц не содержащих фотографии
+[33maaa0e0c[m БД создается нормально
+[33m8fa9b93[m Изменены запросы на создание БД, а также вытаскивания объекта типа ArendRoom в соотсветствии с новым именовнимем колонок в БД
+[33m605b68e[m Добавлены заготовки классов-представления таблиц с картинками в БД
+[33md62164e[m Работа над HTTP запросом
+[33m292f2bd[m Добавлен класс для запроса
+[33m09535c7[m Работа над активити SyncActivity
+[33m9ee7de5[m Добавлена активити для синхронизации
+[33ma720f51[m NEW DATABAZE
+[33m0b9a08c[m закрытие курсора в бдХелпере
+[33m7fe7c93[m DbHelper теперь синглтон
+[33m043379a[m Merge remote-tracking branch 'origin/master'
+[33mea93032[m Изменена логика работы метода getEntitiesList в классе dDHelper
+[33mcee9857[m Merge remote-tracking branch 'origin/master'
+[33m4a9bc34[m Поправлено в toString() то, что было забыто поправить в прошлый раз
+[33m615d3f4[m Основная логика работы Activity ViewInfo реализована
+[33ma6be7ed[m Implemented interfaces
+[33m4fc0c50[m Merge remote-tracking branch 'origin/master'
+[33m1318655[m Логика обработки в активити View перенесена во внутренний класс, чтобы можно было обрабатывать элементы GridView
+[33mcd004c8[m Заодно обобщен List
+[33m695cd65[m Поправлено название метода в интерфейсе DataStore
+[33meb40af5[m Адаптер теперь принимает список любых объектов-наследников класса Entity. Отображается вроде верно
+[33m398852b[m Добавлена примитивная обработка исключения
+[33me7c857b[m toString записан более верно
+[33mf18f523[m Merge branch 'TablesFromDbToView'
+[33m83184b7[m Косметические правки
+[33mf0c193c[m Теперь почти точно сделано
+[33m23a49fc[m Почти работает
+[33mf4dac3b[m Вот теперь метод верный. Вроде бы
+[33me74c5bb[m Метод, возвращающий список тестового класса вроде бы реализован
+[33m8590c12[m Реализован класс с методами форматировани даты в строковое представление и обратно
+[33m32f03c0[m Заготовка для сущностей в базе в виде таблиц
+[33m14a73cc[m Есть доступ к названию таблицы, которую выбрал пользователь в активити View
+[33m8c45fc7[m Поправлена опечатка в названии интерфейса
+[33m778dab9[m Merged branch master into master
+[33m55a8dfe[m project Signed-off-by: VladZaech <rutova2@gmail.com>
+[33ma933f49[m NEW BD Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m63ecf42[m Merge remote-tracking branch 'origin/master'
+[33m149ab97[m Merge branch 'DbHelper'
+[33m3d49580[m Создание/пересоздание ДБ работает нормально
+[33mb05953c[m change target .NET framework to 4.0
+[33m3ef2322[m C# lobrary initialization
+[33m043d0ea[m Реализовано создание и удаление таблиц в БД
+[33m7407198[m Реализован метод создания таблиц БД в отдельном классе
+[33m7963166[m create class DbHelper and interface DataStore for working with database
+[33m122d934[m lastVersionMAin Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m5f6d733[m Update workers.txt
+[33ma224e7a[m LastVersion Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m7ec9242[m Merge remote-tracking branch 'origin/master'
+[33mc10546e[m Implement pressing buttons in MainActivity to three other activities
+[33m4844a7c[m TZ FOR JAVA! Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m5d9f8a1[m Update workers.txt
+[33m90f1f1f[m TZ FOR C# UPDATED
+[33me5b5ced[m SQLITE DATABASE Signed-off-by: VladZaech <rutova2@gmail.com>
+[33md6c6615[m Update workers.txt
+[33m02b41bb[m  create preference activity
+[33m80f4779[m remove unnecessary
+[33m23e7af3[m Merge remote-tracking branch 'origin/master'
+[33m0ef7bd0[m create add activity and view activity
+[33mf8d5d5c[m Merge branch 'master' of https://github.com/Sarmkadan/RieltorHelp-android-
+[33m642b911[m NEW TXT ZADACHA! Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m02fec75[m create main activity
+[33mb0d35b5[m Update workers.txt
+[33m1428a43[m Исправил ник.
+[33m9aafaa5[m Добавлен участник Сергей Сахаров
+[33md1f5818[m dir name fix
+[33mc2306ea[m file fix (reverted from commit 3f996401bb8d87413d59621a9f3a9d23890ccc03)
+[33mc26157a[m file fix
+[33mc5e6afe[m Update README.md
+[33md0fa081[m fix 'worker' to 'workers' dir name
+[33m7c07093[m Add workers list
+[33m3847430[m Update README.md
+[33m14927ba[m TZ
+[33m924515c[m SQL STRUCUTRE
+[33me9c8ffa[m lastComith Signed-off-by: VladZaech <rutova2@gmail.com>
+[33m14f56ff[m tr5 Signed-off-by: vlad.Zaech <rutova2@gmail.com>
+[33m068225a[m try3 Signed-off-by: vlad.Zaech <rutova2@gmail.com>
+[33m5613761[m Try2Comit Signed-off-by: vlad.Zaech <rutova2@gmail.com>
+[33mc235659[m UpdateReadme
+[33m50fd4b0[m MyProjectBegin
+[33m15550a5[m Merge branch 'master' of github.com:Sarmkadan/RieltorHelp-android-
+[33m957cef5[m Begining Signed-off-by: vlad.Zaech <rutova2@gmail.com>
+[33maf21f37[m Update README.md
+[33mc9fb51e[m Update README.md
+[33mfc32d4f[m Initial commit
