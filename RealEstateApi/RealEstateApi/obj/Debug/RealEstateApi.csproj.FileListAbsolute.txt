@@ -52,3 +52,30 @@ D:\WORK\sharpe\RealEstateApi\RealEstateApi\bin\System.Data.SQLite.xml
 D:\WORK\sharpe\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.csprojResolveAssemblyReference.cache
 D:\WORK\sharpe\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.dll
 D:\WORK\sharpe\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.pdb
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\ApplicationInsights.config
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\RealEstateApi.dll.config
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\RealEstateApi.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\RealEstateApi.pdb
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\EntityFramework.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.Web.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\System.Data.SQLite.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\System.Data.SQLite.EF6.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\System.Data.SQLite.Linq.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\EntityFramework.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.Web.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\bin\System.Data.SQLite.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.csprojResolveAssemblyReference.cache
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RealEstateApi\RealEstateApi\obj\Debug\RealEstateApi.pdb

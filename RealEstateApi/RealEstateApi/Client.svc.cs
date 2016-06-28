@@ -37,5 +37,24 @@ namespace RealEstateApi
             conn.Close();
             return doc.DocumentElement;
         }
+        public IEnumerable<string> GetClientsJson(string value)
+        {
+            string path = @System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath + "reiltorhelper.db";
+            List<string> clients = new List<string>();
+
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + path + ";Version=3;New=True;Compress=True;");
+            SQLiteCommand cmd = conn.CreateCommand();
+            conn.Open();
+
+            cmd.CommandText = "select * from Klient where fio like '%" + value + "%'";
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                clients.Add("{ \"phone\": \"" + reader["phone"] + "\", \"fio\": \"" + reader["fio"] + "\",\"about\":\"" + reader["about"] + "\"}");
+            }
+            
+            return clients;
+        }
     }
 }
