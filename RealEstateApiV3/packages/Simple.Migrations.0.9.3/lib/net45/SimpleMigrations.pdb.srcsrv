@@ -1,0 +1,30 @@
+SRCSRV: ini ------------------------------------------------
+VERSION=2
+SRCSRV: variables ------------------------------------------
+SRCSRVVERCTRL=https
+SRCSRVTRG=https://raw.github.com/canton7/SimpleMigrations/607855b73fa7d6ac5ca7818195cb0b695b356871/%var2%
+SRCSRV: source files ---------------------------------------
+C:\projects\simplemigrations\src\SimpleMigrations\ConnectionProvider.cs*src/SimpleMigrations/ConnectionProvider.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Console\ConsoleLogger.cs*src/SimpleMigrations/Console/ConsoleLogger.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Console\ConsoleRunner.cs*src/SimpleMigrations/Console/ConsoleRunner.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Console\HelpNeededException.cs*src/SimpleMigrations/Console/HelpNeededException.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Console\SubCommand.cs*src/SimpleMigrations/Console/SubCommand.cs
+C:\projects\simplemigrations\src\SimpleMigrations\ILogger.cs*src/SimpleMigrations/ILogger.cs
+C:\projects\simplemigrations\src\SimpleMigrations\IMigrationLogger.cs*src/SimpleMigrations/IMigrationLogger.cs
+C:\projects\simplemigrations\src\SimpleMigrations\ISimpleMigrator.cs*src/SimpleMigrations/ISimpleMigrator.cs
+C:\projects\simplemigrations\src\SimpleMigrations\MigrationData.cs*src/SimpleMigrations/MigrationData.cs
+C:\projects\simplemigrations\src\SimpleMigrations\MigrationDirection.cs*src/SimpleMigrations/MigrationDirection.cs
+C:\projects\simplemigrations\src\SimpleMigrations\MigrationException.cs*src/SimpleMigrations/MigrationException.cs
+C:\projects\simplemigrations\src\SimpleMigrations\NullLogger.cs*src/SimpleMigrations/NullLogger.cs
+C:\projects\simplemigrations\src\SimpleMigrations\VersionProvider\PostgresqlVersionProvider.cs*src/SimpleMigrations/VersionProvider/PostgresqlVersionProvider.cs
+C:\projects\simplemigrations\src\SimpleMigrations\VersionProvider\SqliteVersionProvider.cs*src/SimpleMigrations/VersionProvider/SqliteVersionProvider.cs
+C:\projects\simplemigrations\src\SimpleMigrations\VersionProviderBase.cs*src/SimpleMigrations/VersionProviderBase.cs
+C:\projects\simplemigrations\src\SimpleMigrations\IConnectionProvider.cs*src/SimpleMigrations/IConnectionProvider.cs
+C:\projects\simplemigrations\src\SimpleMigrations\IMigration.cs*src/SimpleMigrations/IMigration.cs
+C:\projects\simplemigrations\src\SimpleMigrations\IVersionProvider.cs*src/SimpleMigrations/IVersionProvider.cs
+C:\projects\simplemigrations\src\SimpleMigrations\MigrationAttribute.cs*src/SimpleMigrations/MigrationAttribute.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Migration.cs*src/SimpleMigrations/Migration.cs
+C:\projects\simplemigrations\src\SimpleMigrations\Properties\AssemblyInfo.cs*src/SimpleMigrations/Properties/AssemblyInfo.cs
+C:\projects\simplemigrations\src\SimpleMigrations\SimpleMigrator.cs*src/SimpleMigrations/SimpleMigrator.cs
+C:\projects\simplemigrations\src\SimpleMigrations\SimpleMigrator`2.cs*src/SimpleMigrations/SimpleMigrator`2.cs
+SRCSRV: end ------------------------------------------------

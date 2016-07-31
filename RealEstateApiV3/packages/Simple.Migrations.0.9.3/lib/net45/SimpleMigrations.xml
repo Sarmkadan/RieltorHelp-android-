@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleMigrations</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleMigrations.ConnectionProvider">
+            <summary>
+            Implements <see cref="T:SimpleMigrations.IConnectionProvider`1"/> for <see cref="T:System.Data.IDbConnection"/> connections
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.ConnectionProvider.Connection">
+            <summary>
+            Gets the current connection, set using the constructors
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ConnectionProvider.#ctor(System.Data.IDbConnection)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.ConnectionProvider"/> class
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ConnectionProvider.BeginTransaction">
+            <summary>
+            Begins a transaction
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ConnectionProvider.CommitTransaction">
+            <summary>
+            Commits the ongoing transaction
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ConnectionProvider.RollbackTransaction">
+            <summary>
+            Rolls back the ongoing transaction
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.Console.ConsoleLogger">
+            <summary>
+            <see cref="T:SimpleMigrations.ILogger"/> implementation which logs to the console
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.ConsoleLogger.EnableSqlLogging">
+            <summary>
+            Gets or sets a value indicating whether SQL should be logged
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.Console.ConsoleLogger"/> class
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.BeginSequence(SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations is started
+            </summary>
+            <param name="from">Migration being migrated from</param>
+            <param name="to">Migration being migrated to</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.EndSequence(SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations is completed successfully
+            </summary>
+            <param name="from">Migration which was migrated from</param>
+            <param name="to">Migration which was migrated to</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.EndSequenceWithError(System.Exception,SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations fails with an error
+            </summary>
+            <param name="exception">Exception which was encountered</param>
+            <param name="from">Migration which was migrated from</param>
+            <param name="currentVersion">Last successful migration which was applied</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.BeginMigration(SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration is started
+            </summary>
+            <param name="migration">Migration being started</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.EndMigration(SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration is completed successfully
+            </summary>
+            <param name="migration">Migration which completed</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.EndMigrationWithError(System.Exception,SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration fails with an error
+            </summary>
+            <param name="exception">Exception which was encountered</param>
+            <param name="migration">Migration which failed</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.Info(System.String)">
+            <summary>
+            Invoked when another informative message should be logged
+            </summary>
+            <param name="message">Message to be logged</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleLogger.LogSql(System.String)">
+            <summary>
+            Invoked when SQL being executed should be logged
+            </summary>
+            <param name="message">SQL to log</param>
+        </member>
+        <member name="T:SimpleMigrations.Console.ConsoleRunner">
+            <summary>
+            Class which provides an easy way to run migrations from a console application
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.ConsoleRunner.DefaultSubCommand">
+            <summary>
+            Gets or sets the subcommand to run if no subcommand is given. If null, help will be printed
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.ConsoleRunner.SubCommands">
+            <summary>
+            Gets a list of subcommands which are supported
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleRunner.#ctor(SimpleMigrations.ISimpleMigrator)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.Console.ConsoleLogger"/> class
+            </summary>
+            <param name="migrator">Migrator to use</param>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleRunner.CreateSubCommands">
+            <summary>
+            Assign <see cref="P:SimpleMigrations.Console.ConsoleRunner.SubCommands"/> (and optionally <see cref="P:SimpleMigrations.Console.ConsoleRunner.DefaultSubCommand"/>)
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleRunner.ShowHelp">
+            <summary>
+            Show help
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleRunner.ParseVersion(System.String)">
+            <summary>
+            Parse a migration version from a string
+            </summary>
+            <param name="input">String to parse</param>
+            <returns>Parsed migration version</returns>
+        </member>
+        <member name="M:SimpleMigrations.Console.ConsoleRunner.Run(System.String[])">
+            <summary>
+            Run the <see cref="T:SimpleMigrations.Console.ConsoleRunner"/> with the given command-line arguments
+            </summary>
+            <param name="args">Command-line arguments to use</param>
+        </member>
+        <member name="T:SimpleMigrations.Console.HelpNeededException">
+            <summary>
+            Throw this from a <see cref="T:SimpleMigrations.Console.SubCommand"/> to show help to the user
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Console.HelpNeededException.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.Console.HelpNeededException"/> class
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.Console.SubCommandAction">
+            <summary>
+            Signature for the actino of a <see cref="T:SimpleMigrations.Console.SubCommand"/>
+            </summary>
+            <param name="args">Additional command-line arguments</param>
+        </member>
+        <member name="T:SimpleMigrations.Console.SubCommand">
+            <summary>
+            A SubCommand, used by the <see cref="T:SimpleMigrations.Console.ConsoleRunner"/> class
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.SubCommand.Command">
+            <summary>
+            Gets and sets the sub-command, which when matched will cause this subcommand to run
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.SubCommand.Description">
+            <summary>
+            Gets and sets the description of the sub-command, which is shown to the user
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Console.SubCommand.Action">
+            <summary>
+            Gets and sets the action to invoke when the user executes the sub-command
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.ILogger">
+            <summary>
+            A logger, which can log migration progress and output
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.BeginSequence(SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations is started
+            </summary>
+            <param name="from">Migration being migrated from</param>
+            <param name="to">Migration being migrated to</param>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.EndSequence(SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations is completed successfully
+            </summary>
+            <param name="from">Migration which was migrated from</param>
+            <param name="to">Migration which was migrated to</param>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.EndSequenceWithError(System.Exception,SimpleMigrations.MigrationData,SimpleMigrations.MigrationData)">
+            <summary>
+            Invoked when a sequence of migrations fails with an error
+            </summary>
+            <param name="exception">Exception which was encountered</param>
+            <param name="from">Migration which was migrated from</param>
+            <param name="currentVersion">Last successful migration which was applied</param>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.BeginMigration(SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration is started
+            </summary>
+            <param name="migration">Migration being started</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.EndMigration(SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration is completed successfully
+            </summary>
+            <param name="migration">Migration which completed</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.ILogger.EndMigrationWithError(System.Exception,SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Invoked when an individual migration fails with an error
+            </summary>
+            <param name="exception">Exception which was encountered</param>
+            <param name="migration">Migration which failed</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="T:SimpleMigrations.IMigrationLogger">
+            <summary>
+            Logger used by migrations to log things
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IMigrationLogger.Info(System.String)">
+            <summary>
+            Invoked when another informative message should be logged
+            </summary>
+            <param name="message">Message to be logged</param>
+        </member>
+        <member name="M:SimpleMigrations.IMigrationLogger.LogSql(System.String)">
+            <summary>
+            Invoked when SQL being executed should be logged
+            </summary>
+            <param name="sql">SQL to log</param>
+        </member>
+        <member name="T:SimpleMigrations.ISimpleMigrator">
+            <summary>
+            Interface defining how to interact with a SimpleMigrator
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.ISimpleMigrator.Logger">
+            <summary>
+            Gets and sets the logger to use. May be null
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.ISimpleMigrator.CurrentMigration">
+            <summary>
+            Gets the currently-applied migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.ISimpleMigrator.LatestMigration">
+            <summary>
+            Gets the latest available migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.ISimpleMigrator.Migrations">
+            <summary>
+            Gets all available migrations
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ISimpleMigrator.Load">
+            <summary>
+            Load all available migrations, and the current state of the database
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ISimpleMigrator.MigrateToLatest">
+            <summary>
+            Migrate up to the latest version
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.ISimpleMigrator.MigrateTo(System.Int64)">
+            <summary>
+            Migrate to a specific version
+            </summary>
+            <param name="newVersion">Version to migrate to</param>
+        </member>
+        <member name="M:SimpleMigrations.ISimpleMigrator.Baseline(System.Int64)">
+            <summary>
+            Pretend that the database is at the given version, without running any migrations.
+            This is useful for introducing SimpleMigrations to an existing database.
+            </summary>
+            <param name="version">Version to introduce</param>
+        </member>
+        <member name="T:SimpleMigrations.MigrationData">
+            <summary>
+            Class representing data about a migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationData.Version">
+            <summary>
+            Version of this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationData.Description">
+            <summary>
+            Description of this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationData.Type">
+            <summary>
+            Type of class implementing this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationData.FullName">
+            <summary>
+            Name of the migration, including the type name and description
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationData.UseTransaction">
+            <summary>
+            Whether or not this migration should be run inside a transaction
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.MigrationDirection">
+            <summary>
+            Represents the direction of a migration
+            </summary>
+        </member>
+        <member name="F:SimpleMigrations.MigrationDirection.Up">
+            <summary>
+            Migration is going up: the migration being applied is newer than the current version
+            </summary>
+        </member>
+        <member name="F:SimpleMigrations.MigrationDirection.Down">
+            <summary>
+            Migration is going down: the migration being applied is older than the current version
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.MigrationException">
+            <summary>
+            An exception relating to migrations occurred
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.MigrationException.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.MigrationException"/> class
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.MigrationException.#ctor(System.String)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.MigrationException"/> class
+            </summary>
+            <param name="message">Message to use</param>
+        </member>
+        <member name="M:SimpleMigrations.MigrationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.MigrationException"/> class
+            </summary>
+            <param name="message">Message to use</param>
+            <param name="innerException">Inner exception to use</param>
+        </member>
+        <member name="M:SimpleMigrations.MigrationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.MigrationException"/> class
+            </summary>
+            <param name="info">SerializationInfo to use</param>
+            <param name="context">StreamingContext to use</param>
+        </member>
+        <member name="T:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider">
+            <summary>
+            Class which can read from / write to a version table in an PostgreSQL database
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider.TableName">
+            <summary>
+            Gets or sets the name of the table to use. Defaults to 'VersionInfo'
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.VersionProvider.SQLiteVersionProvider"/> class
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider.GetCreateVersionTableSql">
+            <summary>
+            Returns SQL to create the version table
+            </summary>
+            <returns>SQL to create the version table</returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider.GetCurrentVersionSql">
+            <summary>
+            Returns SQL to fetch the current version from the version table
+            </summary>
+            <returns>SQL to fetch the current version from the version table</returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.PostgreSQLVersionProvider.GetSetVersionSql">
+            <summary>
+            Returns SQL to update the current version in the version table
+            </summary>
+            <returns>SQL to update the current version in the version table</returns>
+        </member>
+        <member name="T:SimpleMigrations.VersionProvider.SQLiteVersionProvider">
+            <summary>
+            Class which can read from / write to a version table in an SQLite database
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.VersionProvider.SQLiteVersionProvider.TableName">
+            <summary>
+            Gets or sets the name of the table to use. Defaults to 'VersionInfo'
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.SQLiteVersionProvider.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.VersionProvider.SQLiteVersionProvider"/> class
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.SQLiteVersionProvider.GetCreateVersionTableSql">
+            <summary>
+            Returns SQL to create the version table
+            </summary>
+            <returns>SQL to create the version table</returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.SQLiteVersionProvider.GetCurrentVersionSql">
+            <summary>
+            Returns SQL to fetch the current version from the version table
+            </summary>
+            <returns>SQL to fetch the current version from the version table</returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProvider.SQLiteVersionProvider.GetSetVersionSql">
+            <summary>
+            Returns SQL to update the current version in the version table
+            </summary>
+            <returns>SQL to update the current version in the version table</returns>
+        </member>
+        <member name="T:SimpleMigrations.VersionProviderBase">
+            <summary>
+            Version provider which acts by maintaining a table of applied versions
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.EnsureCreated(System.Data.IDbConnection)">
+            <summary>
+            Ensure that the version table exists, creating it if necessary
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.GetCurrentVersion(System.Data.IDbConnection)">
+            <summary>
+            Return the current version from the version table
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+            <returns>Current version</returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.UpdateVersion(System.Data.IDbConnection,System.Int64,System.Int64,System.String)">
+            <summary>
+            Upgrade the current version in the version table
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+            <param name="oldVersion">Version being upgraded from</param>
+            <param name="newVersion">Version being upgraded to</param>
+            <param name="newDescription">Description to associate with the new version</param>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.GetCreateVersionTableSql">
+            <summary>
+            Should 'CREATE TABLE IF NOT EXISTS', or similar
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.GetCurrentVersionSql">
+            <summary>
+            Should return SQL which selects a single long value - the current version - or 0/NULL if there is no current version
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleMigrations.VersionProviderBase.GetSetVersionSql">
+            <summary>
+            Returns SQL which upgrades to a particular version.
+            </summary>
+            <remarks>
+            The following parameters should be used:
+             - @Version - the long version to set
+             - @Description - the description of the version
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleMigrations.IConnectionProvider`1">
+            <summary>
+            Provider which gives access to a database connection. Used to provide the connection to migrations, and to perform transactions
+            </summary>
+            <typeparam name="TDatabase">Type of the database being provided</typeparam>
+        </member>
+        <member name="P:SimpleMigrations.IConnectionProvider`1.Connection">
+            <summary>
+            Gets the connection, which will be given to migrations
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IConnectionProvider`1.BeginTransaction">
+            <summary>
+            Begins a transaction
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IConnectionProvider`1.CommitTransaction">
+            <summary>
+            Commits the ongoing transaction
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IConnectionProvider`1.RollbackTransaction">
+            <summary>
+            Rolls back the ongoing transaction
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.IMigration`1">
+            <summary>
+            Interface which must be implemented by all migrations, although you probably want to derive from <see cref="T:SimpleMigrations.Migration"/> instead
+            </summary>
+            <typeparam name="TDatabase">Type of database connection which this migration will use</typeparam>
+        </member>
+        <member name="P:SimpleMigrations.IMigration`1.DB">
+            <summary>
+            Gets or sets the database to be used by this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.IMigration`1.Logger">
+            <summary>
+            Gets or sets the logger to be used by this migration
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IMigration`1.Up">
+            <summary>
+            Invoked when this migration should migrate up
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.IMigration`1.Down">
+            <summary>
+            Invoked when this migration should migrate down
+            </summary>
+        </member>
+        <member name="T:SimpleMigrations.IVersionProvider`1">
+            <summary>
+            Interface representing the ability to interact with the Version table in the database
+            </summary>
+            <typeparam name="TDatabase">Type of database connection</typeparam>
+        </member>
+        <member name="M:SimpleMigrations.IVersionProvider`1.EnsureCreated(`0)">
+            <summary>
+            Ensure that the version table exists, creating it if necessary
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+        </member>
+        <member name="M:SimpleMigrations.IVersionProvider`1.GetCurrentVersion(`0)">
+            <summary>
+            Return the current version from the version table
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+            <returns>Current version</returns>
+        </member>
+        <member name="M:SimpleMigrations.IVersionProvider`1.UpdateVersion(`0,System.Int64,System.Int64,System.String)">
+            <summary>
+            Update the current version in the version table
+            </summary>
+            <param name="connection">Connection to use to perform this action</param>
+            <param name="oldVersion">Version being upgraded from</param>
+            <param name="newVersion">Version being upgraded to</param>
+            <param name="newDescription">Description to associate with the new version</param>
+        </member>
+        <member name="T:SimpleMigrations.MigrationAttribute">
+            <summary>
+            [Migration(version)] attribute which must be applied to all migrations
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationAttribute.Version">
+            <summary>
+            Version of this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationAttribute.Description">
+            <summary>
+            Gets or sets the optional description of this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.MigrationAttribute.UseTransaction">
+            <summary>
+            Gets or sets a value indicating whether this migration should be run in a transaction (default to true)
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.MigrationAttribute.#ctor(System.Int64,System.String,System.Boolean)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.MigrationAttribute"/> class
+            </summary>
+            <param name="version">Version of this migration</param>
+            <param name="description">Optional description of this migration</param>
+            <param name="useTransaction">Whether this migration should be run in a transaction</param>
+        </member>
+        <member name="T:SimpleMigrations.Migration">
+            <summary>
+            Base class, intended to be used by all migrations (although you may implement <see cref="T:SimpleMigrations.IMigration`1"/> directly if you wish).
+            Migrations MUST apply the <see cref="T:SimpleMigrations.MigrationAttribute"/> attribute
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Migration.DB">
+            <summary>
+            Gets or sets the database to be used by this migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.Migration.Logger">
+            <summary>
+            Gets or sets the logger to be used by this migration
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Migration.Up">
+            <summary>
+            Invoked when this migration should migrate up
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Migration.Down">
+            <summary>
+            Invoked when this migration should migrate down
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.Migration.Execute(System.String)">
+            <summary>
+            Execute and log an SQL query (which returns no data)
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="T:SimpleMigrations.SimpleMigrator">
+            <summary>
+            Migrator which uses <see cref="T:System.Data.IDbConnection"/> connections
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator.#ctor(System.Reflection.Assembly,System.Data.IDbConnection,SimpleMigrations.IVersionProvider{System.Data.IDbConnection},SimpleMigrations.ILogger)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.SimpleMigrator"/> class
+            </summary>
+            <param name="migrationAssembly">Assembly to search for migrations</param>
+            <param name="connection">Connection to use to communicate with the database</param>
+            <param name="versionProvider"><see cref="T:SimpleMigrations.IVersionProvider`1"/> implementation to use</param>
+            <param name="logger">Logger to use to log progress</param>
+        </member>
+        <member name="T:SimpleMigrations.SimpleMigrator`2">
+            <summary>
+            Base class for migrators, allowing any database type and custom configuration of migrations
+            </summary>
+            <typeparam name="TDatabase">Type of database connection to use</typeparam>
+            <typeparam name="TMigrationBase">Type of migration base class</typeparam>
+        </member>
+        <member name="F:SimpleMigrations.SimpleMigrator`2.MigrationAssembly">
+            <summary>
+            Assembly to search for migrations
+            </summary>
+        </member>
+        <member name="F:SimpleMigrations.SimpleMigrator`2.ConnectionProvider">
+            <summary>
+            Connection provider
+            </summary>
+        </member>
+        <member name="F:SimpleMigrations.SimpleMigrator`2.VersionProvider">
+            <summary>
+            Version provider, providing access to the version table
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.SimpleMigrator`2.Logger">
+            <summary>
+            Gets and sets the logger to use. May be null
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.SimpleMigrator`2.CurrentMigration">
+            <summary>
+            Gets the currently-applied migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.SimpleMigrator`2.LatestMigration">
+            <summary>
+            Gets the latest available migration
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.SimpleMigrator`2.Migrations">
+            <summary>
+            Gets all available migrations
+            </summary>
+        </member>
+        <member name="P:SimpleMigrations.SimpleMigrator`2.NotNullLogger">
+            <summary>
+            Gets a logger which is not null
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.#ctor(System.Reflection.Assembly,SimpleMigrations.IConnectionProvider{`0},SimpleMigrations.IVersionProvider{`0},SimpleMigrations.ILogger)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:SimpleMigrations.SimpleMigrator`2"/> class
+            </summary>
+            <param name="migrationAssembly">Assembly to search for migrations</param>
+            <param name="connectionProvider">Connection provider to use to communicate with the database</param>
+            <param name="versionProvider">Version provider to use to get/set the current version from the database</param>
+            <param name="logger">Logger to use to log progress and messages</param>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.EnsureLoaded">
+            <summary>
+            Ensure that .Load() has bene called
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.Load">
+            <summary>
+            Load all available migrations, and the current state of the database
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.FindAndSetMigrations">
+            <summary>
+            Set this.Migrations, by scanning this.migrationAssembly for migrations
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.SetCurrentVersion">
+            <summary>
+            Set this.CurrentMigration, by inspecting the database
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.MigrateToLatest">
+            <summary>
+            Migrate up to the latest version
+            </summary>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.MigrateTo(System.Int64)">
+            <summary>
+            Migrate to a specific version
+            </summary>
+            <param name="newVersion">Version to migrate to</param>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.Baseline(System.Int64)">
+            <summary>
+            Pretend that the database is at the given version, without running any migrations.
+            This is useful for introducing SimpleMigrations to an existing database.
+            </summary>
+            <param name="version">Version to introduce</param>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.FindMigrationsToRun(System.Int64,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Find a list of migrations to run, to bring the database up to the given version
+            </summary>
+            <param name="newVersion">Version to bring the database to</param>
+            <param name="direction">Direction of migrations</param>
+            <returns>A sorted list of migrations to run, with the first migration to run being first in the collection</returns>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.RunMigrations(System.Collections.Generic.IEnumerable{SimpleMigrations.MigrationData},SimpleMigrations.MigrationDirection)">
+            <summary>
+            Run the given list of migrations
+            </summary>
+            <param name="migrations">Migrations to run, must be sorted</param>
+            <param name="direction">Direction of mgirations</param>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.MigrateStep(SimpleMigrations.MigrationData,SimpleMigrations.MigrationData,SimpleMigrations.MigrationDirection)">
+            <summary>
+            Perform a single migration
+            </summary>
+            <param name="oldMigration">Migration to migrate from</param>
+            <param name="newMigration">Migration to migrate to</param>
+            <param name="direction">Direction of the migration</param>
+        </member>
+        <member name="M:SimpleMigrations.SimpleMigrator`2.CreateMigration(SimpleMigrations.MigrationData)">
+            <summary>
+            Create and configure an instance of a migration
+            </summary>
+            <param name="migrationData">Data to create the migration for</param>
+            <returns>An instantiated and configured migration</returns>
+        </member>
+    </members>
+</doc>
