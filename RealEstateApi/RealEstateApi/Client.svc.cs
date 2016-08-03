@@ -53,6 +53,7 @@ namespace RealEstateApi
             {
                 clients.Add("{"phone":""+reader['phone']+"","fio":""+reader['fio']+"","about":"" + reader['about'] + ""}");
             }
+            clients.Add("END;")
             
             return clients;
         }
