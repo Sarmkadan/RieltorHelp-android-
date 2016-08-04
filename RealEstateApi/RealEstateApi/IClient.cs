@@ -16,9 +16,10 @@ namespace RealEstateApi
         [OperationContract]
         [WebGet]
         XmlElement GetClients(string fio);
+        
 
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json)]
-        IEnumerable<string> GetClientsJson(string value);
+        IEnumerable<ClientModel> GetClientsJson(string fio);
     }
 }
