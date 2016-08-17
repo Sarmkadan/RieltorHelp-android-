@@ -6,6 +6,12 @@
 *.user
 *.sln.docstates
 
+RieltorHelper.IdentityWebApp/[Bb]in/
+RieltorHelper.IdentityWebApp/[Oo]bj/
+RieltorHelper.DomainModel/[Bb]in/
+RieltorHelper.DomainModel/[Oo]bj/
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

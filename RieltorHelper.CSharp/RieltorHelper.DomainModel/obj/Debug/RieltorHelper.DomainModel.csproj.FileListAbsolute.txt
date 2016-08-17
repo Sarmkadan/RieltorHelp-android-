@@ -12,3 +12,20 @@ D:\WORK\sharpe\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorH
 D:\WORK\sharpe\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.csproj.GenerateResource.Cache
 D:\WORK\sharpe\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.dll
 D:\WORK\sharpe\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.pdb
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\RieltorHelper.DomainModel.dll.config
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\RieltorHelper.DomainModel.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\RieltorHelper.DomainModel.pdb
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\EntityFramework.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\System.Net.Http.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\EntityFramework.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\System.Net.Http.xml
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\bin\Debug\ru\System.Net.Http.resources.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.Migrations.InitialMigration.resources
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.csproj.GenerateResource.Cache
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.dll
+C:\Users\User\Projects\Shared Projects\RieltorHelp-android-\RieltorHelper.CSharp\RieltorHelper.DomainModel\obj\Debug\RieltorHelper.DomainModel.pdb
