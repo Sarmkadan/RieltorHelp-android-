@@ -10,6 +10,8 @@ namespace RieltorHelper.DomainModel
     public interface IGenericRepository<T> where T: class
     {
         int GetCount();
+
+        IQueryable<T> AsQueryable();
         Task<int> GetCountAsync();
         IQueryable<T> Get();
         Task<IQueryable<T>> GetAsync();

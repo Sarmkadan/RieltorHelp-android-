@@ -7,21 +7,25 @@ using System.Threading.Tasks;
 
 namespace RieltorHelper.DomainModel
 {
-    public class LocalMemoryGenericRepository<T> : IGenericRepository<T> where T : class, IDatabaseEntity
+    public class UsersRepository : IGenericRepository<User>
     {
-        private List<T> entities;
-
-        public LocalMemoryGenericRepository()
+        RieltorDbContext dbContext;
+        public UsersRepository()
         {
-            entities = new List<T>();
+            dbContext = new RieltorDbContext();
         }
 
-        public void Create(T value)
+        public IQueryable<User> AsQueryable()
         {
-            entities.Add(value);
+            return dbContext.Users.AsQueryable();
         }
 
-        public Task CreateAsync(T value)
+        public void Create(User value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateAsync(User value)
         {
             throw new NotImplementedException();
         }
@@ -36,49 +40,49 @@ namespace RieltorHelper.DomainModel
             throw new NotImplementedException();
         }
 
-        public void Edit(int id, T value)
+        public void Edit(int id, User value)
         {
             throw new NotImplementedException();
         }
 
-        public Task EditAsync(int id, T value)
+        public Task EditAsync(int id, User value)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<T> Get()
+        public IQueryable<User> Get()
         {
-            return entities.AsQueryable();
+            return dbContext.Users;
         }
 
-        public T Get(int id)
+        public User Get(int id)
         {
-            return entities.First(e => e.Id == id);
+            return dbContext.Users.Find(id);
         }
 
-        public IQueryable<T> Get(Expression<Func<T, bool>> query)
-        {
-            return entities.AsQueryable().Where(query);
-        }
-
-        public Task<IQueryable<T>> GetAsync()
+        public IQueryable<User> Get(Expression<Func<User, bool>> query)
         {
             throw new NotImplementedException();
         }
 
-        public Task<T> GetAsync(int id)
+        public Task<IQueryable<User>> GetAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IQueryable<T>> GetAsync(Expression<Func<T, bool>> query)
+        public Task<User> GetAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IQueryable<User>> GetAsync(Expression<Func<User, bool>> query)
         {
             throw new NotImplementedException();
         }
 
         public int GetCount()
         {
-            return entities.Count;
+            throw new NotImplementedException();
         }
 
         public Task<int> GetCountAsync()

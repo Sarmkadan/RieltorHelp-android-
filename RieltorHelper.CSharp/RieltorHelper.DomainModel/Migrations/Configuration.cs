@@ -27,10 +27,10 @@ namespace RieltorHelper.DomainModel.Migrations
             //    );
             //
             context.Users.AddOrUpdate(
-                    new User() { About = "A girl has no name", FIO = "Arya Stark", Phone=000 },
-                    new User() { About = "PM", FIO= "sarmkadan", Phone=123 },
-                    new User() { About ="Some dev", FIO="Kos Koskapan", Phone=2},
-                    new User() { About= "Yet another dev", FIO= "Wadim Rudkovski", Phone=3 }                    
+                    new User() { About = "A girl has no name", FIO = "Arya Stark", Phone="000" },
+                    new User() { About = "PM", FIO= "sarmkadan", Phone="123" },
+                    new User() { About ="Some dev", FIO="Kos Koskapan", Phone="2"},
+                    new User() { About= "Yet another dev", FIO= "Wadim Rudkovski", Phone="3" }                    
                     );
         }
     }

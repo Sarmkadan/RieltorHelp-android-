@@ -503,12 +503,11 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="M:RieltorHelper.IdentityWebApp.Controllers.RieltorHelperApiController.GetUsers(System.String,System.String)">
+        <member name="M:RieltorHelper.IdentityWebApp.Controllers.UsersController.Get(System.String)">
             <summary>
             Get list of users satisfying the fio parameter
             </summary>
             <param name="access_token"> Access token of the application</param>
-            <param name="fio"> Value for fio </param>
             <returns>IEnumerable of users</returns>
         </member>
     </members>

@@ -58,10 +58,8 @@ namespace RieltorHelper.IdentityWebApp.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
-            kernel.Bind<IRieltorService>().To<RieltorService>();
-            kernel.Bind(typeof(IGenericRepository<>)).To(typeof(DatabaseGenericRepository<>));
             kernel.Bind<RieltorDbContext>().ToSelf().InRequestScope();
+            kernel.Bind<IGenericRepository<User>>().To<UsersRepository>();
         }        
     }
 }

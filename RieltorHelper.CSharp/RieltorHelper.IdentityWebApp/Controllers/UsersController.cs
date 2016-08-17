@@ -5,19 +5,22 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.OData;
+using System.Web.Http.OData.Query;
+using System.Net.Http;
+using System.Web.Http.OData.Extensions;
 
 namespace RieltorHelper.IdentityWebApp.Controllers
 {
-    [RoutePrefix("api/v1")] //prefix to all method routes in this class
     //Uncomment this line to enable authorization
     //[Authorize]
-    public class RieltorHelperApiController: ApiController
+    public class UsersController: ApiController
     {
-        private IRieltorService service;
+        private IGenericRepository<User> repository;
         
-        public RieltorHelperApiController(IRieltorService service)
+        public UsersController(IGenericRepository<User> repository)
         {
-            this.service = service;
+            this.repository = repository;
 
         }
 
@@ -25,20 +28,12 @@ namespace RieltorHelper.IdentityWebApp.Controllers
         /// Get list of users satisfying the fio parameter
         /// </summary>
         /// <param name="access_token"> Access token of the application</param>
-        /// <param name="fio"> Value for fio </param>
         /// <returns>IEnumerable of users</returns>
-        [Route("users/get")] //this route is equal to http://<address>/api/v1/get?fio=____
         [HttpGet]
-        public async Task<IEnumerable<User>> GetUsers(string access_token, string fio = "")
+        [EnableQuery]
+        public  IQueryable<User> Get(string access_token)
         {
-            if (fio != "")
-            {
-                return await service.GetUsersAsync(usr => usr.FIO.ToUpper().Contains(fio.ToUpper()));
-            }
-            else
-            {
-                return await service.GetUsersAsync();
-            }
+            return repository.AsQueryable();
         }
 
         /*
