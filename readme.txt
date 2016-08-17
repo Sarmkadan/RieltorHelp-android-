@@ -5,7 +5,7 @@ Work with MsSql database over the Entity Framework ORM.
 Before execute configure the connectionString (Web.config file <connectionstrings> xml-node)
 
 To create account:
-POST /api/Register
+POST /api/Account/Register
 Body:
 {
   "Email": "sample string 1",
