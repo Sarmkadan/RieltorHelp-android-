@@ -12,3 +12,6 @@
 (Так же будет работа над либой которая будет мержить БАЗУ из Явы с базой на компе ( C#)
 =======
 
+---
+
+> Built by [Vladyslav Zaiets](https://sarmkadan.com) - CTO at [Red Rocket Software](https://redrocket.software)
